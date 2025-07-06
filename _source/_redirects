@@ -1,0 +1,6 @@
+# Netlify redirects file
+# Redirect /admin to /admin/ for CMS
+/admin /admin/ 301
+
+# Fallback for SPA-like behavior (if needed)
+# /app/* /index.html 200

@@ -1,0 +1,114 @@
+---
+title: Blog
+description: Thoughts, insights, and updates from {{ site.author }}
+layout: base.html
+eleventyImport:
+  collections: ["posts"]
+---
+
+<header class="grid">
+  <nav class="flex no-wrap justify-between align-items-center py-md">
+    <a class="font-size-xl font-weight-xxl uppercase line-height-flush undecorated" href="/">
+      {{ site.title }}
+    </a>
+    <div class="inline-flex gap-md align-items-center">
+      <ul class="unlisted inline-flex gap-md align-items-center">
+        <li><a href="/#about" class="button --simple">About</a></li>
+        <li><a href="/#work" class="button --simple">Work</a></li>
+        <li><a href="/blog/" class="button --simple --active">Blog</a></li>
+        <li><a href="/#contact" class="button --primary">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="grid">
+  
+  <!-- Blog Header -->
+  <section class="span-8 start-3 py-xxl center">
+    <h1 class="font-size-xxxl font-weight-xxl line-height-flush mb-md">
+      Blog
+    </h1>
+    <p class="font-size-lg line-length-md">
+      Thoughts, insights, and updates from my creative journey
+    </p>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="span-10 start-2 pb-xxl">
+    {% if collections.posts.size > 0 %}
+      <div class="grid gap-lg">
+        {% assign sortedPosts = collections.posts | reverse %}
+        {% for post in sortedPosts %}
+          <article class="span-6 bg-white p-lg shadow-sm">
+            
+            <!-- Featured Image -->
+            {% if post.data.featured_image %}
+              <div class="mb-md">
+                <img src="{{ post.data.featured_image }}" alt="{{ post.data.title }}" class="w-full" style="height: 200px; object-fit: cover;">
+              </div>
+            {% else %}
+              <div class="bg-neutral-200 mb-md" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                <span class="font-size-sm color --text-muted">{{ post.data.title }}</span>
+              </div>
+            {% endif %}
+            
+            <!-- Post Meta -->
+            <div class="mb-sm">
+              <time class="font-size-xs color --text-muted" datetime="{{ post.data.date | date: '%Y-%m-%d' }}">
+                {{ post.data.date | fullDate }}
+              </time>
+              {% if post.data.tags %}
+                <div class="mt-xs">
+                  {% for tag in post.data.tags %}
+                    {% unless tag == "post" %}
+                      <span class="font-size-xs bg-neutral-100 px-xs py-xxs mr-xs">{{ tag }}</span>
+                    {% endunless %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            
+            <!-- Post Title & Excerpt -->
+            <h2 class="font-size-lg font-weight-lg mb-sm">
+              <a href="{{ post.url }}" class="undecorated color --text">{{ post.data.title }}</a>
+            </h2>
+            
+            {% if post.data.excerpt %}
+              <p class="font-size-sm line-length-md mb-md color --text-muted">
+                {{ post.data.excerpt }}
+              </p>
+            {% endif %}
+            
+            <!-- Read More -->
+            <a href="{{ post.url }}" class="button --simple --small">Read More →</a>
+            
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <!-- Empty State -->
+      <div class="span-8 start-3 center py-xxl">
+        <div class="bg-neutral-50 p-xxl">
+          <h2 class="font-size-xl font-weight-lg mb-md">No posts yet</h2>
+          <p class="font-size-md color --text-muted mb-lg">
+            Blog posts will appear here once they're published. Check back soon for updates!
+          </p>
+          <a href="/admin/" class="button --primary">Add Your First Post</a>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+
+</main>
+
+<footer class="grid py-lg bg-neutral-100">
+  <div class="span-10 start-2 flex justify-between align-items-center">
+    <p class="font-size-sm">© 2024 {{ site.author }}. All rights reserved.</p>
+    <div class="flex gap-md">
+      <a href="mailto:hello@yourportfolio.com" class="font-size-sm">Email</a>
+      <a href="https://linkedin.com/in/yourprofile" class="font-size-sm">LinkedIn</a>
+      <a href="https://github.com/yourusername" class="font-size-sm">GitHub</a>
+    </div>
+  </div>
+</footer>

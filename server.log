@@ -1,0 +1,27 @@
+
+> grease@3.0.0 start
+> eleventy --serve --incremental --quiet
+
+[11ty] Benchmark     60ms  17%    53× (Configuration) "@11ty/eleventy/html-transformer" Transform
+[11ty] Wrote 10 files in 0.35 seconds (v3.1.0)
+[11ty] Watching…
+[11ty] Server at http://10.2.22.23:12000/ or http://localhost:12000/
+[11ty] File changed: ./eleventy.config.js
+[11ty] Wrote 10 files in 0.11 seconds (v3.1.0)
+[11ty] File added: ./_source/_data/homepage.json
+[11ty] Wrote 10 files in 0.03 seconds (v3.1.0)
+[11ty] File added: ./_source/assets/css/_components/homepage.css
+[11ty] Wrote 1 file (skipped 52) in 0.02 seconds (v3.1.0)
+[11ty] File changed: ./_source/assets/css/_components/_components.css
+[11ty] Wrote 2 files (skipped 51) in 0.02 seconds (v3.1.0)
+[11ty] File changed: ./_source/index.html
+[11ty] Wrote 2 files (skipped 52) in 0.04 seconds (v3.1.0)
+[11ty] File changed: ./_source/index.html
+[11ty] Wrote 2 files (skipped 52) in 0.02 seconds (v3.1.0)
+[11ty] File changed: _source/admin/config.yml (skips build)
+[11ty] File added: _source/assets/images/portfolio/hero-profile.jpg (skips build)
+[11ty] File added: _source/assets/images/clients/apajh-logo.png (skips build)
+[11ty] File added: _source/assets/images/clients/arisse-logo.png (skips build)
+[11ty] File added: _source/assets/images/clients/apei-logo.png (skips build)
+[11ty] File changed: ./_source/index.html
+[11ty] Wrote 2 files (skipped 52) in 0.02 seconds (v3.1.0)

@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "slogan": "Un objectif partagé :",
+    "subtitle": "Améliorer la performance RH et managériale de votre organisation",
+    "image": "/assets/images/portfolio/hero-profile.jpg",
+    "image_alt": "Profile photo"
+  },
+  "services": {
+    "title": "Notre offre",
+    "items": [
+      {
+        "title": "La fonction de DRH de transition",
+        "description": "Vous souhaitez une période de changement au sein de votre organisation et avez besoin d'un accompagnement stratégique RH ou d'un renforcement de ressources humaines ?",
+        "icon": "transition",
+        "color": "light-blue",
+        "details": "Detailed description of transition HR services..."
+      },
+      {
+        "title": "Accompagnement et conseil",
+        "description": "Vous souhaitez transformer vos organisations et optimiser vos ressources humaines ? En tant que consultant RH spécialisé en accompagnement au changement...",
+        "icon": "consulting",
+        "color": "dark-blue",
+        "details": "Detailed description of consulting services..."
+      },
+      {
+        "title": "Coaching",
+        "description": "Vous souhaitez être accompagné avec succès à atteindre vos objectifs personnels et professionnels ?",
+        "icon": "coaching",
+        "color": "dark-blue",
+        "details": "Detailed description of coaching services..."
+      },
+      {
+        "title": "Formation",
+        "description": "Vous souhaitez renforcer les compétences de vos équipes ? Faites vos formations sur toutes les thématiques ressources humaines...",
+        "icon": "formation",
+        "color": "light-blue",
+        "details": "Detailed description of training services..."
+      }
+    ]
+  },
+  "expertise": {
+    "title": "Les 3 E pour la réussite de votre projet",
+    "cards": [
+      {
+        "title": "Expertise",
+        "description": "Une palette de compétences en direction RH, en gestion de projet, coaching stratégique et formation des équipes en matière de projets, sur des sujets opérationnels formation, paie, à en coaching d'organisation et management d'équipes.",
+        "color": "dark-blue"
+      },
+      {
+        "title": "Expérience",
+        "description": "Plus de 15 ans d'expérience en ressources humaines et management.",
+        "color": "medium-blue"
+      },
+      {
+        "title": "Efficacité",
+        "description": "Des solutions concrètes et mesurables pour votre organisation.",
+        "color": "light-blue"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Témoignages clients",
+    "featured_posts": [
+      {
+        "client": "APAJH du Loiret",
+        "title": "Assurer la continuité de la fonction RH dans un contexte de restructuration",
+        "excerpt": "Saepe quis atque ipsum veniam qui earum. Laboriosam est dolorem at ducimus suscipit quis. Perferendis occaecati rerum aliquid.",
+        "logo": "/assets/images/clients/apajh-logo.png"
+      },
+      {
+        "client": "ARISSE",
+        "title": "Transformation digitale RH",
+        "excerpt": "Laboriosam est dolorem at ducimus suscipit quis. Perferendis occaecati.",
+        "logo": "/assets/images/clients/arisse-logo.png"
+      },
+      {
+        "client": "Apei Soissons",
+        "title": "Accompagnement managérial",
+        "excerpt": "Erferendis occaecati rerum aliquid. Saepe quis atque ipsum veniam qui earum.",
+        "logo": "/assets/images/clients/apei-logo.png"
+      }
+    ]
+  }
+}

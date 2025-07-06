@@ -13,3 +13,15 @@
   [headers.values]
     Cache-Control = "public, max-age=365000000, immutable"
 
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+# Redirect /admin to /admin/ for CMS
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+

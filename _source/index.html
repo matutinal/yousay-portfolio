@@ -1,14 +1,165 @@
 ---
-title: Grease
-description: Grease takes the friction out of building fast, adaptable, aesthetic websites.
+title: "{{ site.title }}"
+description: "{{ site.description }}"
 layout: base.html
-# noindex: true
-# canonical: https://example.com/page.html
-permalink: false
 ---
 
-{% comment %}
-  Build your real homepage here, but make sure you delete the `permalink: false` line above, and in /docs/index.html.
+<header class="grid">
+  <nav class="flex no-wrap justify-between align-items-center py-md">
+    <a class="font-size-xl font-weight-xxl uppercase line-height-flush undecorated" href="/">
+      {{ site.title }}
+    </a>
+    <div class="inline-flex gap-md align-items-center">
+      <ul class="unlisted inline-flex gap-md align-items-center">
+        <li><a href="#services" class="button --simple">Notre offre</a></li>
+        <li><a href="#expertise" class="button --simple">Qui sommes-nous</a></li>
+        <li><a href="#testimonials" class="button --simple">Actualités</a></li>
+        <li><a href="/blog/" class="button --simple">Blog</a></li>
+        <li><a href="#contact" class="button --primary">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-  That way, you still have the docs and kitchen sink at /docs while you build out your site. The kitchen sink is a helpful tool for seeing all the changes you make in one place!
-{% endcomment %}
+<main class="grid">
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="span-10 start-2">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-slogan">{{ homepage.hero.slogan }}</h1>
+          <h2 class="hero-subtitle">{{ homepage.hero.subtitle }}</h2>
+        </div>
+        <div class="hero-image">
+          <img src="{{ homepage.hero.image }}" alt="{{ homepage.hero.image_alt }}">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="span-10 start-2">
+      <h2 class="services-title">{{ homepage.services.title }}</h2>
+      <div class="services-grid">
+        {% for service in homepage.services.items %}
+          <div class="service-card --{{ service.color }}" data-service="{{ forloop.index0 }}">
+            <div class="service-icon --{{ service.icon }}"></div>
+            <h3 class="service-title">{{ service.title }}</h3>
+            <p class="service-description">{{ service.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section id="expertise" class="expertise-section">
+    <div class="span-10 start-2">
+      <h2 class="expertise-title">{{ homepage.expertise.title }}</h2>
+      <div class="expertise-carousel">
+        <div class="expertise-cards">
+          {% for card in homepage.expertise.cards %}
+            <div class="expertise-card --{{ card.color }}">
+              <h3 class="expertise-card-title">{{ card.title }}</h3>
+              <p class="expertise-card-description">{{ card.description }}</p>
+            </div>
+          {% endfor %}
+          <!-- Duplicate cards for seamless loop -->
+          {% for card in homepage.expertise.cards %}
+            <div class="expertise-card --{{ card.color }}">
+              <h3 class="expertise-card-title">{{ card.title }}</h3>
+              <p class="expertise-card-description">{{ card.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="span-10 start-2">
+      <h2 class="testimonials-title">{{ homepage.testimonials.title }}</h2>
+      <div class="testimonials-carousel" id="testimonialsCarousel">
+        <div class="testimonials-track">
+          {% for testimonial in homepage.testimonials.featured_posts %}
+            <div class="testimonial-card">
+              <h3 class="testimonial-client">{{ testimonial.client }}</h3>
+              <h4 class="testimonial-title">{{ testimonial.title }}</h4>
+              <p class="testimonial-excerpt">{{ testimonial.excerpt }}</p>
+              {% if testimonial.logo %}
+                <img src="{{ testimonial.logo }}" alt="{{ testimonial.client }} logo" class="testimonial-logo">
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="testimonial-nav">
+          {% for testimonial in homepage.testimonials.featured_posts %}
+            <button class="{% if forloop.first %}active{% endif %}" data-slide="{{ forloop.index0 }}"></button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="grid py-lg" style="background: linear-gradient(135deg, #1A365D 0%, #2C5282 100%); color: white;">
+  <div class="span-10 start-2 center">
+    <p class="font-size-sm">© 2025 {{ site.title }}. 
+      <a href="#" class="color --white" style="text-decoration: underline;">Mentions légales</a>
+    </p>
+    <div class="flex gap-md justify-center mt-sm">
+      <a href="https://linkedin.com/company/yousay-consulting" class="color --white font-size-sm">LinkedIn</a>
+      <a href="mailto:contact@yousay-consulting.fr" class="color --white font-size-sm">Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript for interactive elements -->
+<script>
+// Testimonials carousel functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('testimonialsCarousel');
+  if (carousel) {
+    const track = carousel.querySelector('.testimonials-track');
+    const slides = carousel.querySelectorAll('.testimonial-card');
+    const navButtons = carousel.querySelectorAll('.testimonial-nav button');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].offsetWidth + 24; // width + gap
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      
+      navButtons.forEach((btn, index) => {
+        btn.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    navButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+      });
+    });
+
+    // Auto-advance carousel
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    }, 5000);
+  }
+
+  // Service card click handlers (for future popover functionality)
+  const serviceCards = document.querySelectorAll('.service-card');
+  serviceCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const serviceIndex = this.dataset.service;
+      console.log('Service clicked:', serviceIndex);
+      // Future: Show popover with service details
+    });
+  });
+});
+</script>

@@ -22,6 +22,16 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('markdownify', markdownify);
 
   /* --------------------------------------------------------------------------
+  Collections
+  -------------------------------------------------------------------------- */
+  // Blog posts collection
+  eleventyConfig.addCollection('posts', function(collectionApi) {
+    return collectionApi.getFilteredByGlob('_source/blog/posts/*.md').sort((a, b) => {
+      return new Date(b.data.date) - new Date(a.data.date);
+    });
+  });
+
+  /* --------------------------------------------------------------------------
   MarkdownIt settings
   -------------------------------------------------------------------------- */
   const markdownItOptions = {
@@ -37,6 +47,20 @@ export default async function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
   eleventyConfig.addPassthroughCopy('_source/assets/fonts');
   eleventyConfig.addPassthroughCopy('_source/assets/images');
+  eleventyConfig.addPassthroughCopy('_source/admin');
+  eleventyConfig.addPassthroughCopy('_source/_redirects');
+
+  // Configure the dev server
+  eleventyConfig.setServerOptions({
+    port: 12000,
+    showAllHosts: true,
+    headers: {
+      'X-Frame-Options': 'ALLOWALL',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+    }
+  });
 
   return {
     dir: {

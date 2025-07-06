@@ -1,0 +1,87 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# Uncomment below to enable drafts
+# publish_mode: editorial_workflow
+
+media_folder: "_source/assets/images/uploads" # Media files will be stored in the repo under _source/assets/images/uploads
+public_folder: "/assets/images/uploads" # The src attribute for uploaded media will begin with /assets/images/uploads
+
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "_source/blog/posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog-post.html"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Excerpt", name: "excerpt", widget: "text", required: false}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["post"], allow_add: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "_source/_data/homepage.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Slogan", name: "slogan", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+          - label: "Services Section"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Services"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Icon", name: "icon", widget: "select", options: ["transition", "consulting", "coaching", "formation"]}
+                  - {label: "Color", name: "color", widget: "select", options: ["light-blue", "dark-blue"]}
+                  - {label: "Details", name: "details", widget: "markdown"}
+          - label: "Expertise Section"
+            name: "expertise"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Color", name: "color", widget: "select", options: ["dark-blue", "medium-blue", "light-blue"]}
+          - label: "Testimonials Section"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Featured Posts"
+                name: "featured_posts"
+                widget: "list"
+                fields:
+                  - {label: "Client", name: "client", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Excerpt", name: "excerpt", widget: "text"}
+                  - {label: "Logo", name: "logo", widget: "image", required: false}
+      - label: "Site Settings"
+        name: "site"
+        file: "_source/_data/site.json"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Author", name: "author", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}

@@ -1,0 +1,99 @@
+---
+layout: base.html
+---
+
+<header class="grid">
+  <nav class="flex no-wrap justify-between align-items-center py-md">
+    <a class="font-size-xl font-weight-xxl uppercase line-height-flush undecorated" href="/">
+      {{ site.title }}
+    </a>
+    <div class="inline-flex gap-md align-items-center">
+      <ul class="unlisted inline-flex gap-md align-items-center">
+        <li><a href="/#about" class="button --simple">About</a></li>
+        <li><a href="/#work" class="button --simple">Work</a></li>
+        <li><a href="/blog/" class="button --simple">Blog</a></li>
+        <li><a href="/#contact" class="button --primary">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="grid">
+  
+  <!-- Blog Post Header -->
+  <article class="span-8 start-3 py-xxl">
+    
+    <!-- Back to Blog -->
+    <div class="mb-lg">
+      <a href="/blog/" class="button --simple --small">← Back to Blog</a>
+    </div>
+    
+    <!-- Post Meta -->
+    <div class="mb-md">
+      <time class="font-size-sm color --text-muted" datetime="{{ date | date: '%Y-%m-%d' }}">
+        {{ date | fullDate }}
+      </time>
+      {% if tags %}
+        <div class="mt-xs">
+          {% for tag in tags %}
+            {% unless tag == "post" %}
+              <span class="font-size-xs bg-neutral-100 px-sm py-xs mr-xs">{{ tag }}</span>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    
+    <!-- Post Title -->
+    <h1 class="font-size-xxxl font-weight-xxl line-height-tight mb-lg">
+      {{ title }}
+    </h1>
+    
+    <!-- Post Excerpt -->
+    {% if excerpt %}
+      <p class="font-size-lg color --text-muted line-length-lg mb-xxl">
+        {{ excerpt }}
+      </p>
+    {% endif %}
+    
+    <!-- Featured Image -->
+    {% if featured_image %}
+      <div class="mb-xxl">
+        <img src="{{ featured_image }}" alt="{{ title }}" class="w-full">
+      </div>
+    {% endif %}
+    
+    <!-- Post Content -->
+    <div class="prose line-length-lg">
+      {{ content }}
+    </div>
+    
+    <!-- Post Footer -->
+    <footer class="mt-xxl pt-lg border-top">
+      <div class="flex justify-between align-items-center">
+        <div>
+          <p class="font-size-sm color --text-muted mb-xs">Published on</p>
+          <time class="font-size-md" datetime="{{ date | date: '%Y-%m-%d' }}">
+            {{ date | fullDate }}
+          </time>
+        </div>
+        <div>
+          <a href="/blog/" class="button --primary">More Posts</a>
+        </div>
+      </div>
+    </footer>
+    
+  </article>
+  
+</main>
+
+<footer class="grid py-lg bg-neutral-100">
+  <div class="span-10 start-2 flex justify-between align-items-center">
+    <p class="font-size-sm">© 2024 {{ site.author }}. All rights reserved.</p>
+    <div class="flex gap-md">
+      <a href="mailto:hello@yourportfolio.com" class="font-size-sm">Email</a>
+      <a href="https://linkedin.com/in/yourprofile" class="font-size-sm">LinkedIn</a>
+      <a href="https://github.com/yourusername" class="font-size-sm">GitHub</a>
+    </div>
+  </div>
+</footer>
