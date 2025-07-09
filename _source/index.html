@@ -53,125 +53,37 @@ layout: base.html
       </div>
 
       <!-- Detailed Service Cards -->
-      <div id="service-detail-0" class="service-detail-card" data-direction="top" style="display: none;">
-        <button class="service-detail-close" data-close="service-detail-0">
+      {% for service in collections.services %}
+      <div id="service-detail-{{ forloop.index0 }}" class="service-detail-card" data-direction="{{ service.data.animation_direction }}" style="display: none;">
+        <button class="service-detail-close" data-close="service-detail-{{ forloop.index0 }}">
           <i class="fas fa-times"></i>
         </button>
         <div class="service-detail-content">
           <div class="service-detail-main">
-            <h2>DRH de transition</h2>
-            <p>Vous traversez une période de changement au sein de votre organisation et avez besoin d'un accompagnement stratégique et/ou opérationnel en ressources humaines ? En tant que DRH de transition, je suis là pour vous aider à porter ces défis avec expertise et efficacité.</p>
+            <h2>{{ service.data.title }}</h2>
+            <p>{{ service.data.description }}</p>
           </div>
           <div class="service-detail-benefits">
-            <h3>Pourquoi choisir mes services ?</h3>
+            <h3>{{ service.data.benefits_title }}</h3>
             <ul>
-              <li><strong>♦ Expérience :</strong> Plus de vingt (20) années d'expérience en gestion des ressources humaines</li>
-              <li><strong>♦ Flexibilité :</strong> Capacité à intervenir rapidement et à s'adapter aux besoins spécifiques de votre organisation.</li>
-              <li><strong>♦ Résultats :</strong> Un focus sur l'atteinte dans les meilleurs délais de résultats concrets et mesurables pour votre organisation</li>
+              {% for benefit in service.data.benefits %}
+              <li><strong>♦ {{ benefit.title }} :</strong> {{ benefit.description }}</li>
+              {% endfor %}
             </ul>
-            <p>Pour discuter de vos besoins et découvrir comment je peux vous accompagner, n'hésitez pas à me contacter.</p>
+            <p>{{ service.data.closing_text }}</p>
           </div>
         </div>
         <div class="service-detail-footer">
           <div class="service-detail-testimonials">
-            <h3>Témoignages clients</h3>
+            <h3>{{ service.data.testimonials_title }}</h3>
           </div>
           <button class="service-detail-cta">
             <i class="fas fa-envelope"></i>
-            J'exprime mon besoin
+            {{ service.data.cta_text }}
           </button>
         </div>
       </div>
-
-      <div id="service-detail-1" class="service-detail-card" data-direction="right" style="display: none;">
-        <button class="service-detail-close" data-close="service-detail-1">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="service-detail-content">
-          <div class="service-detail-main">
-            <h2>Accompagnement et conseil</h2>
-            <p>Vous souhaitez transformer vos organisations et optimiser vos ressources humaines ? En tant que consultant RH spécialisé en accompagnement au changement, je vous aide à développer des stratégies RH efficaces et durables.</p>
-          </div>
-          <div class="service-detail-benefits">
-            <h3>Pourquoi choisir mes services ?</h3>
-            <ul>
-              <li><strong>♦ Expertise :</strong> Spécialisation en transformation organisationnelle et conduite du changement</li>
-              <li><strong>♦ Méthodologie :</strong> Approche structurée et personnalisée selon vos enjeux spécifiques</li>
-              <li><strong>♦ Accompagnement :</strong> Suivi continu et ajustement des stratégies en temps réel</li>
-            </ul>
-            <p>Ensemble, nous construirons les solutions RH adaptées à vos défis organisationnels.</p>
-          </div>
-        </div>
-        <div class="service-detail-footer">
-          <div class="service-detail-testimonials">
-            <h3>Témoignages clients</h3>
-          </div>
-          <button class="service-detail-cta">
-            <i class="fas fa-envelope"></i>
-            J'exprime mon besoin
-          </button>
-        </div>
-      </div>
-
-      <div id="service-detail-2" class="service-detail-card" data-direction="bottom" style="display: none;">
-        <button class="service-detail-close" data-close="service-detail-2">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="service-detail-content">
-          <div class="service-detail-main">
-            <h2>Coaching</h2>
-            <p>Vous souhaitez être accompagné avec succès à atteindre vos objectifs personnels et professionnels ? Mon approche de coaching vous permet de développer votre potentiel et d'optimiser vos performances managériales.</p>
-          </div>
-          <div class="service-detail-benefits">
-            <h3>Pourquoi choisir mes services ?</h3>
-            <ul>
-              <li><strong>♦ Personnalisation :</strong> Coaching adapté à votre profil et vos objectifs spécifiques</li>
-              <li><strong>♦ Pratique :</strong> Outils concrets et techniques éprouvées pour votre développement</li>
-              <li><strong>♦ Résultats :</strong> Accompagnement orienté performance et atteinte d'objectifs mesurables</li>
-            </ul>
-            <p>Développez votre leadership et atteignez vos objectifs avec un accompagnement personnalisé.</p>
-          </div>
-        </div>
-        <div class="service-detail-footer">
-          <div class="service-detail-testimonials">
-            <h3>Témoignages clients</h3>
-          </div>
-          <button class="service-detail-cta">
-            <i class="fas fa-envelope"></i>
-            J'exprime mon besoin
-          </button>
-        </div>
-      </div>
-
-      <div id="service-detail-3" class="service-detail-card" data-direction="left" style="display: none;">
-        <button class="service-detail-close" data-close="service-detail-3">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="service-detail-content">
-          <div class="service-detail-main">
-            <h2>Formation</h2>
-            <p>Vous souhaitez renforcer les compétences de vos équipes ? Faites vos formations sur toutes les thématiques ressources humaines avec des programmes adaptés à vos besoins et contraintes organisationnelles.</p>
-          </div>
-          <div class="service-detail-benefits">
-            <h3>Pourquoi choisir mes services ?</h3>
-            <ul>
-              <li><strong>♦ Expertise :</strong> Formations couvrant tous les aspects des ressources humaines</li>
-              <li><strong>♦ Adaptabilité :</strong> Programmes sur-mesure selon vos besoins et contraintes</li>
-              <li><strong>♦ Efficacité :</strong> Méthodes pédagogiques interactives et orientées pratique</li>
-            </ul>
-            <p>Développez les compétences de vos équipes avec des formations pratiques et efficaces.</p>
-          </div>
-        </div>
-        <div class="service-detail-footer">
-          <div class="service-detail-testimonials">
-            <h3>Témoignages clients</h3>
-          </div>
-          <button class="service-detail-cta">
-            <i class="fas fa-envelope"></i>
-            J'exprime mon besoin
-          </button>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 

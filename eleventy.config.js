@@ -31,6 +31,13 @@ export default async function (eleventyConfig) {
     });
   });
 
+  // Services collection
+  eleventyConfig.addCollection('services', function(collectionApi) {
+    return collectionApi.getFilteredByGlob('_source/services/*.md').sort((a, b) => {
+      return (a.data.order || 0) - (b.data.order || 0);
+    });
+  });
+
   /* --------------------------------------------------------------------------
   MarkdownIt settings
   -------------------------------------------------------------------------- */

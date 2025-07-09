@@ -9,6 +9,28 @@ media_folder: "_source/assets/images/uploads" # Media files will be stored in th
 public_folder: "/assets/images/uploads" # The src attribute for uploaded media will begin with /assets/images/uploads
 
 collections:
+  - name: "services" # Used in routes, e.g., /admin/collections/services
+    label: "Services" # Used in the UI
+    folder: "_source/services" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'A slug can have no spaces or special characters']}
+      - {label: "Order", name: "order", widget: "number", value_type: "int", min: 1, max: 10}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Benefits Title", name: "benefits_title", widget: "string", default: "Pourquoi choisir mes services ?"}
+      - label: "Benefits"
+        name: "benefits"
+        widget: "list"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+      - {label: "Closing Text", name: "closing_text", widget: "text"}
+      - {label: "CTA Text", name: "cta_text", widget: "string", default: "J'exprime mon besoin"}
+      - {label: "Testimonials Title", name: "testimonials_title", widget: "string", default: "Témoignages clients"}
+      - {label: "Animation Direction", name: "animation_direction", widget: "select", options: ["top", "right", "bottom", "left"]}
+
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "_source/blog/posts" # The path to the folder where the documents are stored
