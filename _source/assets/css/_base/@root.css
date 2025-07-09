@@ -20,8 +20,8 @@
 
 	/* source colors */
 	--neutral: oklch(80% 0.01 300deg);
-	--primary: oklch(30% 0.3 300deg);
-	--secondary: oklch(70% 0.15 200deg);
+	--primary: #66bcd7;
+	--secondary: #003464;
 
 	/* preset colors */
 	--color-text: light-dark(
