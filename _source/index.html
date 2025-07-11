@@ -1,20 +1,24 @@
 ---
-title: "{{ site.title }}"
+title: Youssou SEYE Consultant et Coach
 description: "{{ site.description }}"
 layout: base.html
 ---
 
 <header class="grid">
   <nav class="flex no-wrap justify-between align-items-center py-md">
-    <a class="font-size-xl font-weight-xxl uppercase line-height-flush undecorated" href="/">
+    <a
+      class="font-size-xl font-weight-xxl uppercase line-height-flush undecorated"
+      href="/"
+    >
       {{ site.title }}
     </a>
     <div class="inline-flex gap-md align-items-center">
       <ul class="unlisted inline-flex gap-md align-items-center">
         <li><a href="#services" class="button --simple">Notre offre</a></li>
-        <li><a href="#expertise" class="button --simple">Qui sommes-nous</a></li>
-        <li><a href="#testimonials" class="button --simple">Actualités</a></li>
-        <li><a href="/blog/" class="button --simple">Blog</a></li>
+        <li>
+          <a href="#expertise" class="button --simple">Qui sommes-nous</a>
+        </li>
+        <li><a href="/blog/" class="button --simple">Actualités</a></li>
         <li><a href="#contact" class="button --primary">Contact</a></li>
       </ul>
     </div>
@@ -22,7 +26,6 @@ layout: base.html
 </header>
 
 <main class="grid">
-  
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="span-10 start-2">
@@ -32,7 +35,10 @@ layout: base.html
           <h2 class="hero-subtitle">{{ homepage.hero.subtitle }}</h2>
         </div>
         <div class="hero-image">
-          <img src="{{ homepage.hero.image }}" alt="{{ homepage.hero.image_alt }}">
+          <img
+            src="{{ homepage.hero.image }}"
+            alt="{{ homepage.hero.image_alt }}"
+          />
         </div>
       </div>
     </div>
@@ -44,18 +50,29 @@ layout: base.html
       <h2 class="services-title">{{ homepage.services.title }}</h2>
       <div class="services-grid">
         {% for service in homepage.services.items %}
-          <div class="service-card --{{ service.color }}" data-service="{{ forloop.index0 }}">
-            <div class="service-icon --{{ service.icon }}"></div>
-            <h3 class="service-title">{{ service.title }}</h3>
-            <p class="service-description">{{ service.description }}</p>
-          </div>
+        <div
+          class="service-card --{{ service.color }}"
+          data-service="{{ forloop.index0 }}"
+        >
+          <div class="service-icon --{{ service.icon }}"></div>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+        </div>
         {% endfor %}
       </div>
 
       <!-- Detailed Service Cards -->
       {% for service in collections.services %}
-      <div id="service-detail-{{ forloop.index0 }}" class="service-detail-card" data-direction="{{ service.data.animation_direction }}" style="display: none;">
-        <button class="service-detail-close" data-close="service-detail-{{ forloop.index0 }}">
+      <div
+        id="service-detail-{{ forloop.index0 }}"
+        class="service-detail-card"
+        data-direction="{{ service.data.animation_direction }}"
+        style="display: none"
+      >
+        <button
+          class="service-detail-close"
+          data-close="service-detail-{{ forloop.index0 }}"
+        >
           <i class="fas fa-times"></i>
         </button>
         <div class="service-detail-content">
@@ -67,7 +84,10 @@ layout: base.html
             <h3>{{ service.data.benefits_title }}</h3>
             <ul>
               {% for benefit in service.data.benefits %}
-              <li><strong>♦ {{ benefit.title }} :</strong> {{ benefit.description }}</li>
+              <li>
+                <strong>♦ {{ benefit.title }} :</strong> {{ benefit.description
+                }}
+              </li>
               {% endfor %}
             </ul>
             <p>{{ service.data.closing_text }}</p>
@@ -94,17 +114,17 @@ layout: base.html
       <div class="expertise-carousel">
         <div class="expertise-cards">
           {% for card in homepage.expertise.cards %}
-            <div class="expertise-card --{{ card.color }}">
-              <h3 class="expertise-card-title">{{ card.title }}</h3>
-              <p class="expertise-card-description">{{ card.description }}</p>
-            </div>
+          <div class="expertise-card --{{ card.color }}">
+            <h3 class="expertise-card-title">{{ card.title }}</h3>
+            <p class="expertise-card-description">{{ card.description }}</p>
+          </div>
           {% endfor %}
           <!-- Duplicate cards for seamless loop -->
           {% for card in homepage.expertise.cards %}
-            <div class="expertise-card --{{ card.color }}">
-              <h3 class="expertise-card-title">{{ card.title }}</h3>
-              <p class="expertise-card-description">{{ card.description }}</p>
-            </div>
+          <div class="expertise-card --{{ card.color }}">
+            <h3 class="expertise-card-title">{{ card.title }}</h3>
+            <p class="expertise-card-description">{{ card.description }}</p>
+          </div>
           {% endfor %}
         </div>
       </div>
@@ -118,137 +138,163 @@ layout: base.html
       <div class="testimonials-carousel" id="testimonialsCarousel">
         <div class="testimonials-track">
           {% for testimonial in homepage.testimonials.featured_posts %}
-            <div class="testimonial-card">
-              <h3 class="testimonial-client">{{ testimonial.client }}</h3>
-              <h4 class="testimonial-title">{{ testimonial.title }}</h4>
-              <p class="testimonial-excerpt">{{ testimonial.excerpt }}</p>
-              {% if testimonial.logo %}
-                <img src="{{ testimonial.logo }}" alt="{{ testimonial.client }} logo" class="testimonial-logo">
-              {% endif %}
-            </div>
+          <div class="testimonial-card">
+            <h3 class="testimonial-client">{{ testimonial.client }}</h3>
+            <h4 class="testimonial-title">{{ testimonial.title }}</h4>
+            <p class="testimonial-excerpt">{{ testimonial.excerpt }}</p>
+            {% if testimonial.logo %}
+            <img
+              src="{{ testimonial.logo }}"
+              alt="{{ testimonial.client }} logo"
+              class="testimonial-logo"
+            />
+            {% endif %}
+          </div>
           {% endfor %}
         </div>
         <div class="testimonial-nav">
           {% for testimonial in homepage.testimonials.featured_posts %}
-            <button class="{% if forloop.first %}active{% endif %}" data-slide="{{ forloop.index0 }}"></button>
+          <button
+            class="{% if forloop.first %}active{% endif %}"
+            data-slide="{{ forloop.index0 }}"
+          ></button>
           {% endfor %}
         </div>
       </div>
     </div>
   </section>
-
 </main>
 
-<footer class="grid py-lg" style="background: linear-gradient(135deg, #1A365D 0%, #2C5282 100%); color: white;">
+<footer
+  class="grid py-lg"
+  style="
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+  "
+>
   <div class="span-10 start-2 center">
-    <p class="font-size-sm">© 2025 {{ site.title }}. 
-      <a href="#" class="color --white" style="text-decoration: underline;">Mentions légales</a>
+    <p class="font-size-sm">
+      © 2025 {{ site.title }}.
+      <a href="#" class="color --white" style="text-decoration: underline"
+        >Mentions légales</a
+      >
     </p>
     <div class="flex gap-md justify-center mt-sm">
-      <a href="https://linkedin.com/company/yousay-consulting" class="color --white font-size-sm">LinkedIn</a>
-      <a href="mailto:contact@yousay-consulting.fr" class="color --white font-size-sm">Email</a>
+      <a
+        href="https://linkedin.com/company/yousay-consulting"
+        class="color --white font-size-sm"
+        >LinkedIn</a
+      >
+      <!-- <a
+        href="mailto:contact@yousay-consulting.fr"
+        class="color --white font-size-sm"
+        >Email</a
+      > -->
     </div>
   </div>
 </footer>
 
 <!-- JavaScript for interactive elements -->
 <script>
-// Testimonials carousel functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.getElementById('testimonialsCarousel');
-  if (carousel) {
-    const track = carousel.querySelector('.testimonials-track');
-    const slides = carousel.querySelectorAll('.testimonial-card');
-    const navButtons = carousel.querySelectorAll('.testimonial-nav button');
-    let currentSlide = 0;
+  // Testimonials carousel functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("testimonialsCarousel");
+    if (carousel) {
+      const track = carousel.querySelector(".testimonials-track");
+      const slides = carousel.querySelectorAll(".testimonial-card");
+      const navButtons = carousel.querySelectorAll(".testimonial-nav button");
+      let currentSlide = 0;
 
-    function updateCarousel() {
-      const slideWidth = slides[0].offsetWidth + 24; // width + gap
-      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-      
+      function updateCarousel() {
+        const slideWidth = slides[0].offsetWidth + 24; // width + gap
+        track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+        navButtons.forEach((btn, index) => {
+          btn.classList.toggle("active", index === currentSlide);
+        });
+      }
+
       navButtons.forEach((btn, index) => {
-        btn.classList.toggle('active', index === currentSlide);
+        btn.addEventListener("click", () => {
+          currentSlide = index;
+          updateCarousel();
+        });
       });
-    }
 
-    navButtons.forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        currentSlide = index;
+      // Auto-advance carousel
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
+      }, 5000);
+    }
+
+    // Service detail card functionality
+    const serviceCards = document.querySelectorAll(".service-card");
+    const serviceDetailCards = document.querySelectorAll(
+      ".service-detail-card"
+    );
+
+    // Function to show service detail card
+    function showServiceDetail(index) {
+      const detailCard = document.getElementById(`service-detail-${index}`);
+      if (detailCard) {
+        detailCard.style.display = "flex";
+        // Trigger animation after display is set
+        setTimeout(() => {
+          detailCard.classList.add("active");
+        }, 10);
+      }
+    }
+
+    // Function to hide service detail card
+    function hideServiceDetail(index) {
+      const detailCard = document.getElementById(`service-detail-${index}`);
+      if (detailCard) {
+        detailCard.classList.remove("active");
+        // Hide after animation completes
+        setTimeout(() => {
+          detailCard.style.display = "none";
+        }, 400);
+      }
+    }
+
+    // Add click handlers for service cards
+    serviceCards.forEach((card) => {
+      card.addEventListener("click", function () {
+        const serviceIndex = this.dataset.service;
+        showServiceDetail(serviceIndex);
       });
     });
 
-    // Auto-advance carousel
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      updateCarousel();
-    }, 5000);
-  }
-
-  // Service detail card functionality
-  const serviceCards = document.querySelectorAll('.service-card');
-  const serviceDetailCards = document.querySelectorAll('.service-detail-card');
-  
-  // Function to show service detail card
-  function showServiceDetail(index) {
-    const detailCard = document.getElementById(`service-detail-${index}`);
-    if (detailCard) {
-      detailCard.style.display = 'flex';
-      // Trigger animation after display is set
-      setTimeout(() => {
-        detailCard.classList.add('active');
-      }, 10);
-    }
-  }
-  
-  // Function to hide service detail card
-  function hideServiceDetail(index) {
-    const detailCard = document.getElementById(`service-detail-${index}`);
-    if (detailCard) {
-      detailCard.classList.remove('active');
-      // Hide after animation completes
-      setTimeout(() => {
-        detailCard.style.display = 'none';
-      }, 400);
-    }
-  }
-  
-  // Add click handlers for service cards
-  serviceCards.forEach(card => {
-    card.addEventListener('click', function() {
-      const serviceIndex = this.dataset.service;
-      showServiceDetail(serviceIndex);
-    });
-  });
-  
-  // Add click handlers for close buttons
-  document.querySelectorAll('.service-detail-close').forEach(button => {
-    button.addEventListener('click', function() {
-      const cardId = this.dataset.close;
-      const index = cardId.split('-').pop();
-      hideServiceDetail(index);
-    });
-  });
-  
-  // Add click handler for CTA buttons
-  serviceDetailCards.forEach(card => {
-    const ctaButton = card.querySelector('.service-detail-cta');
-    if (ctaButton) {
-      ctaButton.addEventListener('click', function() {
-        // Redirect to contact section or open email client
-        window.location.href = 'mailto:contact@yousay-consulting.fr?subject=Demande de renseignements';
-      });
-    }
-  });
-  
-  // Close detail card when clicking outside content
-  serviceDetailCards.forEach(card => {
-    card.addEventListener('click', function(e) {
-      if (e.target === this) {
-        const index = this.id.split('-').pop();
+    // Add click handlers for close buttons
+    document.querySelectorAll(".service-detail-close").forEach((button) => {
+      button.addEventListener("click", function () {
+        const cardId = this.dataset.close;
+        const index = cardId.split("-").pop();
         hideServiceDetail(index);
+      });
+    });
+
+    // Add click handler for CTA buttons
+    serviceDetailCards.forEach((card) => {
+      const ctaButton = card.querySelector(".service-detail-cta");
+      if (ctaButton) {
+        ctaButton.addEventListener("click", function () {
+          // Redirect to contact section or open email client
+          window.location.href =
+            "mailto:contact@yousay-consulting.fr?subject=Demande de renseignements";
+        });
       }
     });
+
+    // Close detail card when clicking outside content
+    serviceDetailCards.forEach((card) => {
+      card.addEventListener("click", function (e) {
+        if (e.target === this) {
+          const index = this.id.split("-").pop();
+          hideServiceDetail(index);
+        }
+      });
+    });
   });
-});
 </script>
