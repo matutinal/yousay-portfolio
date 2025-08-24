@@ -24,7 +24,7 @@ Homepage Components
     .hero-subtitle {
       font-size: var(--font-size-xxl);
       font-weight: var(--font-weight-xl);
-      line-height: var(--line-height-tight);
+      line-height: var(--line-height-lg);
       color: var(--color-text);
     }
   }
