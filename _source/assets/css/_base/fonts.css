@@ -1,7 +1,20 @@
 @font-face {
-	font-family: Sono;
-	src: url("/assets/fonts/Sono.woff2") format("woff2-variations");
-	font-weight: 200 800;
-	font-style: normal;
-	font-display: swap;
+  font-family: Sono;
+  src: url("/assets/fonts/Sono.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Neucha;
+  src: url("/assets/fonts/Neucha-Regular.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+.handdrawn {
+  --font-handdrawn: Neucha;
+  font-family: var(--font-handdrawn);
 }

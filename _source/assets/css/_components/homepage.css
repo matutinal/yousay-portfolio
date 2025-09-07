@@ -382,13 +382,14 @@ Homepage Components
     display: flex;
     gap: var(--space-md);
     animation: slideCards 12s infinite;
-    width: calc(300% + 2 * var(--space-md));
+    width: calc(400% + 2 * var(--space-xl));
   }
 }
 
 .expertise-card {
-  flex: 0 0 calc(33.333% - var(--space-md));
+  flex: 0 0 calc(33.333% - var(--space-xl));
   padding: var(--space-xl);
+  max-width: 450px;
   border-radius: var(--border-radius-lg);
   color: var(--color-white);
   position: relative;
@@ -515,6 +516,8 @@ Homepage Components
     height: 12px;
     border-radius: 50%;
     border: none;
+    padding-inline: 0;
+    padding-block: 0;
     background: #cbd5e0;
     cursor: pointer;
     transition: background-color 0.3s ease;
