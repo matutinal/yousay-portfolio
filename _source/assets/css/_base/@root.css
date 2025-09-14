@@ -19,9 +19,9 @@
   --900: 18% calc(c / 2) h;
 
   /* source colors */
-  --neutral: oklch(80% 0.01 300deg);
-  --primary: #66bcd7;
-  --secondary: #003464;
+  --neutral: oklch(0.7514 0.0916 220.64);
+  --primary: oklch(0.7514 0.0916 220.64);
+  --secondary: oklch(0.3243 0.098363 252.4598);
 
   /* preset colors */
   --color-text: light-dark(
