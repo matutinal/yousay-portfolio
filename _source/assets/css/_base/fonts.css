@@ -14,6 +14,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Century Gothic';
+  src: url("/assets/fonts/centurygothic.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic Bold';
+  src: url("/assets/fonts/centurygothic_bold.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 .handdrawn {
   --font-handdrawn: Neucha;
   font-family: var(--font-handdrawn);
