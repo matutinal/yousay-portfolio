@@ -13,3 +13,22 @@ mark {
       linear-gradient(182deg, #afd7ff00, #afd7ff4d 8%, #afd7ff00 15%);
       /*Credits : https://codepen.io/cassidoo/pen/JjQOBZB */
   }
+
+  mark::before,
+mark::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+mark::before {
+  content: " [highlight start] ";
+}
+
+mark::after {
+  content: " [highlight end] ";
+}
