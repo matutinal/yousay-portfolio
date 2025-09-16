@@ -10,28 +10,28 @@
     "items": [
       {
         "title": "La fonction de DRH de transition",
-        "description": "Vous souhaitez une période de changement au sein de votre organisation et avez besoin d'un accompagnement stratégique RH ou d'un renforcement de ressources humaines ?",
+        "description": "Vous traversez une période de changement au sein de votre organisation et avez besoin d’un accompagnement stratégique et/ou opérationnel en ressources humaines ? Je me rends disponible sur cette période transitoire pour vous accompagner là porter vos défis avec expertise et efficacité.",
         "icon": "transition",
         "color": "light-blue",
         "details": "Detailed description of transition HR services..."
       },
       {
         "title": "Accompagnement et conseil",
-        "description": "Vous souhaitez transformer vos organisations et optimiser vos ressources humaines ? En tant que consultant RH spécialisé en accompagnement au changement...",
+        "description": "Vous souhaitez transformer votre organisation et/ou optimiser la fonction et les ressources humaines ? Consultant RH spécialisé en accompagnement au changement, je vous propose des solutions sur mesure pour répondre à vos besoins spécifiques sur divers enjeux (stratégie, management,  dialogue social, SIRH,,...)",
         "icon": "consulting",
         "color": "dark-blue",
         "details": "Detailed description of consulting services..."
       },
       {
         "title": "Coaching",
-        "description": "Vous souhaitez être accompagné avec succès à atteindre vos objectifs personnels et professionnels ?",
+        "description": "Vous souhaitez un accompangment autour d'objectifs persoonels ou professionels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équopes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
         "icon": "coaching",
         "color": "dark-blue",
         "details": "Detailed description of coaching services..."
       },
       {
         "title": "Formation",
-        "description": "Vous souhaitez renforcer les compétences de vos équipes ? Faites vos formations sur toutes les thématiques ressources humaines...",
+        "description": "Vous souhaitez renforcer les compétences de vos équipes ? J'assure vos formations sur toutes les thématiques ressources humaines. Un projet sur mesure sur divers sujets : droit social, maitrise de la (des) convention(s) collective(s) de votre secteur, gestion de la paie, GEPP, dialogue social et IRP....",
         "icon": "formation",
         "color": "light-blue",
         "details": "Detailed description of training services..."
@@ -43,7 +43,7 @@
     "cards": [
       {
         "title": "Expertise",
-        "description": "Une palette de compétences en direction RH, en gestion de projet, coaching stratégique et formation des équipes en matière de projets, sur des sujets opérationnels formation, paie, à en coaching d'organisation et management d'équipes.",
+        "description": "Une palette de compétences en direction RH, en gestion de projet, en pilotage stratégique, en optimisation des process, en conduite de projets, sur des sujets opérationnels (formation, paie…), en coaching d’organisation, en management et accompagnement d’équipes. Bref… un couteau suisse 😊",
         "color": "dark-blue"
       },
       {
