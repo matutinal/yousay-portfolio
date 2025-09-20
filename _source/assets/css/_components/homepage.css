@@ -162,7 +162,7 @@ Homepage Components
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 100%);
+  background: var(--color-bg-dark);
   z-index: 1000;
   padding: var(--space-xl);
   box-sizing: border-box;
@@ -275,7 +275,6 @@ Homepage Components
     li {
       font-size: var(--font-size-md);
       line-height: var(--line-height-relaxed);
-      color: var(--color-text);
       margin-bottom: var(--space-md);
       opacity: 0.9;
 
@@ -316,7 +315,7 @@ Homepage Components
 
   .service-detail-cta {
     
-    color: var(--color-white);
+    color: var(--color-text);
     border: 2px solid var(--color-text);
     border-radius: var(--border-radius-md);
     padding: var(--space-md) var(--space-xl);
@@ -329,7 +328,7 @@ Homepage Components
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: var(--color-white);
+      background-color: var(--color-background);
       color: var(--color-text);
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
@@ -376,7 +375,6 @@ Homepage Components
     font-weight: var(--font-weight-xl);
     margin-bottom: var(--space-xl);
     text-align: center;
-    color: var(--color-white);
   }
 
   .expertise-hand {
@@ -403,7 +401,6 @@ Homepage Components
   transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
   padding: var(--space-lg);
   box-shadow: var(--shadow-lg);
-  color: var(--color-white);
   /* Performance optimizations */
   will-change: transform, z-index;
   backface-visibility: hidden;
@@ -427,6 +424,7 @@ Homepage Components
     font-family:"Century Gothic Bold";
     margin-bottom: var(--space-sm);
     text-align: center;
+    color:var(--color-white);
 
   }
 
@@ -435,6 +433,7 @@ Homepage Components
     line-height: var(--line-height-relaxed);
     text-align: center;
     opacity: 0.9;
+    color:var(--color-white);
   }
 
   &.expertise-card-1 {
