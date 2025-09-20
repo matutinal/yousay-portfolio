@@ -16,7 +16,7 @@ layout: base.html
       <ul class="unlisted inline-flex gap-md align-items-center">
         <li><a href="#services" class="button --simple">Notre offre</a></li>
         <li>
-          <a href="#expertise" class="button --simple">Qui sommes-nous devbox</a>
+          <a href="#expertise" class="button --simple">Qui sommes-nous</a>
         </li>
         <li><a href="/blog/" class="button --simple">Actualités</a></li>
         <li><a href="#contact" class="button --primary">Contact</a></li>
@@ -110,22 +110,13 @@ layout: base.html
   <section id="expertise" class="expertise-section">
     <div class="span-10 start-2">
       <h2 class="expertise-title">{{ homepage.expertise.title }}</h2>
-      <div class="expertise-carousel">
-        <div class="expertise-cards">
-          {% for card in homepage.expertise.cards %}
-          <div class="expertise-card --{{ card.color }}">
-            <h3 class="expertise-card-title">{{ card.title }}</h3>
-            <p class="expertise-card-description">{{ card.description }}</p>
-          </div>
-          {% endfor %}
-          <!-- Duplicate cards for seamless loop -->
-          {% for card in homepage.expertise.cards %}
-          <div class="expertise-card --{{ card.color }}">
-            <h3 class="expertise-card-title">{{ card.title }}</h3>
-            <p class="expertise-card-description">{{ card.description }}</p>
-          </div>
-          {% endfor %}
+      <div class="expertise-hand">
+        {% for card in homepage.expertise.cards %}
+        <div class="expertise-card expertise-card-{{ forloop.index }} --{{ card.color }}">
+          <h3 class="expertise-card-title">{{ card.title }}</h3>
+          <p class="expertise-card-description">{{ card.description }}</p>
         </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -295,5 +286,16 @@ layout: base.html
         }
       });
     });
+
+    // Expertise card animation fallback for reduced motion preference
+    const expertiseCards = document.querySelectorAll('.expertise-card');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      expertiseCards.forEach(card => {
+        card.style.animation = 'none';
+        card.style.transform = 'translateX(0) rotate(0)';
+      });
+    }
   });
 </script>

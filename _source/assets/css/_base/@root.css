@@ -46,6 +46,7 @@
     oklch(from var(--primary) var(--600))
   );
   --color-shadow: black;
+  --color-white: white;
 
   /* ---------------------------------------------------------------------------
   spacing
