@@ -10,21 +10,21 @@
     "items": [
       {
         "title": "La fonction de DRH de transition",
-        "description": "Vous traversez une période de changement au sein de votre organisation et avez besoin d’un accompagnement stratégique et/ou opérationnel en ressources humaines ? Je me rends disponible sur cette période transitoire pour vous accompagner là porter vos défis avec expertise et efficacité.",
+        "description": "Vous traversez une période de changement au sein de votre organisation et avez besoin d’un accompagnement stratégique et/ou opérationnel en ressources humaines ? Je me rends disponible sur cette période transitoire pour vous accompagner à porter vos défis avec expertise et efficacité.",
         "icon": "transition",
         "color": "light-blue",
         "details": "Detailed description of transition HR services..."
       },
       {
         "title": "Accompagnement et conseil",
-        "description": "Vous souhaitez transformer votre organisation et/ou optimiser la fonction et les ressources humaines ? Consultant RH spécialisé en accompagnement au changement, je vous propose des solutions sur mesure pour répondre à vos besoins spécifiques sur divers enjeux (stratégie, management,  dialogue social, SIRH,,...)",
+        "description": "Vous souhaitez transformer votre organisation et/ou optimiser la fonction ressources humaines ? Consultant RH spécialisé en accompagnement au changement, je vous propose des solutions sur mesure pour répondre à vos besoins spécifiques sur divers enjeux (stratégie, management,  dialogue social, SIRH,,...)",
         "icon": "consulting",
         "color": "dark-blue",
         "details": "Detailed description of consulting services..."
       },
       {
         "title": "Coaching",
-        "description": "Vous souhaitez un accompangment autour d'objectifs persoonels ou professionels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équopes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
+        "description": "Vous souhaitez un accompagnement autour d'objectifs personnels ou professionnels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équopes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
         "icon": "coaching",
         "color": "dark-blue",
         "details": "Detailed description of coaching services..."
