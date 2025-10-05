@@ -264,7 +264,28 @@ layout: base.html
         hideServiceDetail(index);
       });
     });
-
+    // Add click handlers for testimonials anchors
+    document.querySelectorAll('.service-detail-testimonials a').forEach((anchor) => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default anchor behavior
+      
+      // Find the parent service detail card
+      const detailCard = this.closest('.service-detail-card');
+      if (detailCard) {
+        const index = detailCard.id.split('-').pop();
+        hideServiceDetail(index);
+        
+        // Optionally scroll to testimonials section after closing
+        const testimonialsSection = document.getElementById('testimonials');
+        if (testimonialsSection) {
+          setTimeout(() => {
+            testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+          }, 450); // Wait for close animation to complete
+          }
+        }
+    });
+    });
+    
     // Add click handler for CTA buttons
     serviceDetailCards.forEach((card) => {
       const ctaButton = card.querySelector(".service-detail-cta");
