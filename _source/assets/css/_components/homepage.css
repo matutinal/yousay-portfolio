@@ -161,7 +161,8 @@ Homepage Components
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
   background: var(--color-bg-dark);
   z-index: 1000;
   padding: var(--space-xl);
