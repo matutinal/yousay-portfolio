@@ -35,13 +35,6 @@
         "icon": "formation",
         "color": "light-blue",
         "details": "Detailed description of training services..."
-      },
-      {
-        "title": "Service",
-        "description": "Description",
-        "icon": "consulting",
-        "details": "Details",
-        "color": "light-blue"
       }
     ]
   },
