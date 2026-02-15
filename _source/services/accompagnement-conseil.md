@@ -16,7 +16,7 @@ benefits:
   - title: Accompagnement
     description: Suivi continu et ajustement des stratégies en temps réel
   - title: Flexibilité
-    description: Disponibilité totale et réactivité à toue épreuve, vos priorités
+    description: Disponibilité totale et réactivité à toute épreuve, vos priorités
       sont prises en charge.
 closing_text: Ensemble, nous construirons les solutions RH adaptées à vos défis
   organisationnels.
