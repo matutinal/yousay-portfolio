@@ -3,3 +3,6 @@ node_modules
 _public/
 .DS_Store
 .codesandbox/
+devbox.json
+devbox.lock
+.devbox/
