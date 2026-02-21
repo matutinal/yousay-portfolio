@@ -68,11 +68,13 @@
     border-radius: 0;
     border-color: transparent;
     background-color: transparent;
+    border-block-end-width: var(--border-width-xl);
+    border-block-end-style: outset;
 
     @media (--hover) {
       &:hover {
         color: var(--color-text);
-        border-block-end-color: var(--color-text);
+        border-block-end-color: var(--color-accent);
       }
     }
   }

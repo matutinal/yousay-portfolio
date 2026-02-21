@@ -24,14 +24,14 @@
       },
       {
         "title": "Coaching",
-        "description": "Vous souhaitez un accompagnement autour d'objectifs personnels ou professionnels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équopes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
+        "description": "Vous souhaitez un accompagnement autour d’objectifs personnels ou professionnels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équopes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
         "icon": "coaching",
         "color": "dark-blue",
         "details": "Detailed description of coaching services..."
       },
       {
         "title": "Formation",
-        "description": "Vous souhaitez renforcer les compétences de vos équipes ? J'assure vos formations sur toutes les thématiques ressources humaines. Un projet sur mesure sur divers sujets : droit social, maitrise de la (des) convention(s) collective(s) de votre secteur, gestion de la paie, GEPP, dialogue social et IRP....",
+        "description": "Vous souhaitez renforcer les compétences de vos équipes ? J’assure vos formations sur toutes les thématiques ressources humaines. Un projet sur mesure sur divers sujets : droit social, maitrise de la (des) convention(s) collective(s) de votre secteur, gestion de la paie, GEPP, dialogue social et IRP....",
         "icon": "formation",
         "color": "light-blue",
         "details": "Detailed description of training services..."
@@ -48,7 +48,7 @@
       },
       {
         "title": "Expérience",
-        "description": "Plus de 15 ans d'expérience en ressources humaines et management.",
+        "description": "Plus de 15 ans d’expérience en ressources humaines et management.",
         "color": "medium-blue"
       },
       {

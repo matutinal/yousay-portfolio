@@ -308,14 +308,15 @@ Homepage Components
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Century Gothic Bold';
   }
 
   .service-detail-testimonials {
     h3 {
       font-size: var(--font-size-xl);
       font-weight: var(--font-weight-lg);
-      color: var(--color-text);
       text-decoration: underline;
+      text-decoration-color: var(--color-link);
       margin: 0;
     }
   }
