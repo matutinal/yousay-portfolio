@@ -581,6 +581,17 @@ Homepage Components
   }
 }
 
+/*Footer */
+
+footer {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    
+    
+    p, a {
+      color: var(--color-white);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section .hero-content {
