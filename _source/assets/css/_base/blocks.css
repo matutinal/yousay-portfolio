@@ -75,7 +75,11 @@ hr {
 	inline-size: 100%;
 	margin-block: var(--space-lg);
 	border: 0;
-	border-block-start: var(--border-width-sm) solid var(--color-border);
+	/*border-block-start: var(--border-width-sm) solid var(--color-border);*/
+	background-image: url(../images/portfolio/separator.svg);
+	background-repeat: no-repeat;
+	min-height: 1rem;
+	background-position: center;
 }
 
 :where(img, embed, object, svg, video) {
