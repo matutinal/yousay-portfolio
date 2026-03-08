@@ -1,3 +1,7 @@
 nav {
     font-family:'Century Gothic Bold';
+
+    img {
+        max-height:4rem;
+    }
 }
