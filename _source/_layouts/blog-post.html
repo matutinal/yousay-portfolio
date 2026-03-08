@@ -4,15 +4,21 @@ layout: base.html
 
 <header class="grid">
   <nav class="flex no-wrap justify-between align-items-center py-md">
-    <a class="font-size-xl font-weight-xxl uppercase line-height-flush undecorated" href="/">
-      {{ site.title }}
+    <a
+      class="site-title font-size-xl font-weight-xxl line-height-flush undecorated"
+      href="/"
+    >
+    <img src="{{ site.logo }}" alt="logo"/>
+      <span class="pl-md">{{ site.title }}</span>
     </a>
     <div class="inline-flex gap-md align-items-center">
       <ul class="unlisted inline-flex gap-md align-items-center">
-        <li><a href="/#about" class="button --simple">About</a></li>
-        <li><a href="/#work" class="button --simple">Work</a></li>
-        <li><a href="/blog/" class="button --simple">Blog</a></li>
-        <li><a href="/#contact" class="button --primary">Contact</a></li>
+        <li><a href="#services" class="button --simple">Notre offre</a></li>
+        <!--<li>
+          <a href="#" class="button --simple">Qui sommes-nous</a>
+        </li>-->
+        <li><a href="/blog/" class="button --simple">Actualités</a></li>
+        <li><a href="mailto:contact@yousay-consulting.fr" class="button --primary">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -72,13 +78,13 @@ layout: base.html
     <footer class="mt-xxl pt-lg border-top">
       <div class="flex justify-between align-items-center">
         <div>
-          <p class="font-size-sm color --text-muted mb-xs">Published on</p>
+          <p class="font-size-sm color --text-muted mb-xs">Publiée le</p>
           <time class="font-size-md" datetime="{{ date | date: '%Y-%m-%d' }}">
             {{ date | fullDate }}
           </time>
         </div>
         <div>
-          <a href="/blog/" class="button --primary">More Posts</a>
+          <a href="/blog/" class="button --primary">Plus d'actualités</a>
         </div>
       </div>
     </footer>
@@ -89,7 +95,7 @@ layout: base.html
 
 <footer class="grid py-lg bg-neutral-100">
   <div class="span-10 start-2 flex justify-between align-items-center">
-    <p class="font-size-sm">© 2024 {{ site.author }}. All rights reserved.</p>
+    <p class="font-size-sm">© 2026 {{ site.author }}. Tous droits réservés.</p>
     <div class="flex gap-md">
       <a href="mailto:hello@yourportfolio.com" class="font-size-sm">Email</a>
       <a href="https://linkedin.com/in/yourprofile" class="font-size-sm">LinkedIn</a>
