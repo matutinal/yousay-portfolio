@@ -9,18 +9,20 @@ eleventyImport:
 <header class="grid">
   <nav class="flex no-wrap justify-between align-items-center py-md">
     <a
-      class="font-size-xl font-weight-xxl uppercase line-height-flush undecorated"
+      class="site-title font-size-xl font-weight-xxl line-height-flush undecorated"
       href="/"
     >
-      {{ site.title }}
+    <img src="{{ site.logo }}" alt="logo"/>
+      <span class="pl-md">{{ site.title }}</span>
     </a>
     <div class="inline-flex gap-md align-items-center">
       <ul class="unlisted inline-flex gap-md align-items-center">
-        <li><a href="/#about" class="button --simple">Notre offre</a></li>
-        <li><a href="/#work" class="button --simple">Qui sommes-nous</a></li>
-        <li>
-          <a href="/blog/" class="button --simple --active">Acutalités</a>
-        </li>
+        <li><a href="#services" class="button --simple">Notre offre</a></li>
+        <!--<li>
+          <a href="#" class="button --simple">Qui sommes-nous</a>
+        </li>-->
+        <li><a href="/blog/" class="button --simple">Actualités</a></li>
+        <li><a href="mailto:contact@yousay-consulting.fr" class="button --primary">Contact</a></li>
       </ul>
     </div>
   </nav>
