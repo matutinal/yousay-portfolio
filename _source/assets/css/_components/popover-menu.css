@@ -1,6 +1,6 @@
 popover-menu {
 	position: fixed;
-	left:90dvh;
+	left:50dvh;
 	margin: auto;
 
 	& :is([hidden], [popover]:not(:popover-open)) {
