@@ -31,15 +31,10 @@ popover-menu {
 		}
 
 		&[popover] {
-			position-visibility: anchors-visible;
-			position-area: y-end span-x-start;
-			position-try-fallbacks: y-end span-x-start, flip-block, flip-inline;
-			inset: inherit;
-
-			&.anchor-right {
-				position-area: y-end span-x-start;
-				position-try-fallbacks: y-end span-x-end, flip-block, flip-inline;
-			}
+			position: fixed;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
 		}
 	}
 
