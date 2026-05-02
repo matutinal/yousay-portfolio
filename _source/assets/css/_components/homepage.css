@@ -314,7 +314,7 @@ Homepage Components
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: var(--space-xl);
+    gap: var(--space-xxl);
     margin-top: var(--space-xl);
     max-width: 1200px;
     margin-left: auto;
@@ -336,8 +336,8 @@ Homepage Components
     
     color: var(--color-text);
     border: 2px solid var(--color-text);
-    border-radius: var(--border-radius-md);
-    padding: var(--space-md) var(--space-xl);
+    /* border-radius: var(--border-radius-md);*/
+    padding: var(--space-md) var(--space-md); 
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-lg);
     cursor: pointer;
@@ -346,12 +346,13 @@ Homepage Components
     gap: var(--space-sm);
     transition: all 0.3s ease;
 
-    &:hover {
-      background-color: var(--color-background);
-      color: var(--color-text);
+     &:hover {
+      /*background-color: var(--color-background);
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
-    }
+    */
+      color: var(--color-background);
+      } 
   }
 }
 
