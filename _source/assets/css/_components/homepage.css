@@ -57,6 +57,10 @@ Homepage Components
 .services-section {
   padding: 0 0 var(--space-lg) 0;
 
+  > .span-10 {
+    position: relative;
+  }
+
   .services-title {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-xl);
@@ -163,12 +167,12 @@ Homepage Components
 
 /* Service Detail Cards */
 .service-detail-card {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100dvh;
-  overflow-y: auto;
+  width: 100%;
+  min-height: 100%;
+  overflow-y: visible;
   background: var(--color-bg-dark);
   z-index: 1000;
   padding: var(--space-xl);
@@ -265,7 +269,7 @@ Homepage Components
 
     p {
       font-size: var(--font-size-lg);
-      line-height: var(--line-height-relaxed);
+      /* line-height: var(--line-height-relaxed); */
       color: var(--color-text);
       opacity: 0.9;
     }
@@ -282,19 +286,19 @@ Homepage Components
     ul {
       list-style: none;
       padding: 0;
-      margin-bottom: var(--space-xl);
+      margin-bottom: var(--space-md);
     }
 
     li {
       font-size: var(--font-size-md);
-      line-height: var(--line-height-relaxed);
-      margin-bottom: var(--space-md);
+      line-height: var(--line-height-md);
+      margin-bottom: var(--space-sm);
       opacity: 0.9;
 
       strong {
         color: var(--color-text);
         opacity: 1;
-        font-weight: bold;
+        text-transform: uppercase;
       }
     }
 
