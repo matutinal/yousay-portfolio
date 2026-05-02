@@ -4,7 +4,7 @@ Homepage Components
 
 /* Hero Section */
 .hero-section {
-  padding: var(--space-xxl) 0;
+  padding: var(--space-sm) 0;
 
   .hero-content {
     display: grid;
@@ -55,12 +55,12 @@ Homepage Components
 
 /* Services Section */
 .services-section {
-  padding: var(--space-xxl) 0;
+  padding: 0 0 var(--space-lg) 0;
 
   .services-title {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-xl);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-sm);
     color: var(--color-text);
   }
 
@@ -288,6 +288,7 @@ Homepage Components
       strong {
         color: var(--color-text);
         opacity: 1;
+        font-weight: bold;
       }
     }
 
@@ -376,7 +377,7 @@ Homepage Components
 
 /* Expertise Section */
 .expertise-section {
-  padding: var(--space-xxl) 0;
+  padding: var(--space-sm) 0;
 
   .expertise-title {
     font-size: var(--font-size-xxl);
