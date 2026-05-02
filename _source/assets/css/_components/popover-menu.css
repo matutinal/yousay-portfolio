@@ -1,5 +1,7 @@
 popover-menu {
-	position: relative;
+	position: fixed;
+	left:90dvh;
+	margin: auto;
 
 	& :is([hidden], [popover]:not(:popover-open)) {
 		display: none !important;
@@ -10,11 +12,11 @@ popover-menu {
 		flex-direction: column;
 		gap: var(--space-xxs);
 		inline-size: max-content;
-		max-inline-size: 24ch;
-		min-inline-size: 16ch;
+		max-inline-size: 58ch;
+		min-inline-size: 36ch;
 		margin-block: var(--space-xs);
 		border: none;
-		background-color: transparent;
+		background-color: var(--color-bg);
 		overflow: visible;
 
 		&:not([popover]) {
@@ -27,7 +29,7 @@ popover-menu {
 
 		&[popover] {
 			position-visibility: anchors-visible;
-			position-area: y-end span-x-end;
+			position-area: y-end span-x-start;
 			position-try-fallbacks: y-end span-x-start, flip-block, flip-inline;
 			inset: inherit;
 
