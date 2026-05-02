@@ -153,6 +153,12 @@ Homepage Components
     line-height: var(--line-height-relaxed);
     opacity: 0.9;
   }
+
+  .service-more {
+    position: absolute;
+      right: 1dvh;
+      bottom: 1dvh;
+  }
 }
 
 /* Service Detail Cards */
@@ -382,7 +388,7 @@ Homepage Components
   .expertise-title {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-xl);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-sm);
     text-align: center;
   }
 
