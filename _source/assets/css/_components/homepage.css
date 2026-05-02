@@ -83,31 +83,18 @@ Homepage Components
 	overflow: hidden;
 
 	&.--light-blue {
-		background: linear-gradient(
-			135deg,
-			light-dark(
-					oklch(from var(--primary) var(--100)),
-					oklch(from var(--secondary) var(--700))
-				)
-				0%,
-			light-dark(
-					oklch(from var(--primary) var(--300)),
-					oklch(from var(--secondary) var(--600))
-				)
-				100%
+		background-color: light-dark(
+			var(--primary),
+			var(--secondary)
 		);
 		color: light-dark(
-			oklch(from var(--secondary) var(--800)),
-			oklch(from var(--primary) var(--50))
+			var(--secondary),
+			var(--primary)
 		);
 	}
 
 	&.--dark-blue {
-		background: linear-gradient(
-			135deg,
-			oklch(from var(--secondary) var(--500)) 0%,
-			oklch(from var(--secondary) var(--800)) 100%
-		);
+		background: var(--secondary);
 		color: var(--color-white);
 	}
 
@@ -447,27 +434,18 @@ Homepage Components
 	transform: translateZ(0);
 
 	&.--dark-blue {
-		background: linear-gradient(
-			135deg,
-			oklch(from var(--secondary) var(--800)) 0%,
-			oklch(from var(--secondary) var(--500)) 100%
-		);
+		background: oklch(from var(--secondary) var(--500));
+		& h3, p {color: var(--color-white);}
 	}
 
 	&.--medium-blue {
-		background: linear-gradient(
-			135deg,
-			oklch(from var(--secondary) var(--500)) 0%,
-			oklch(from var(--secondary) var(--300)) 100%
-		);
+		background: var(--secondary);
+		& h3, p {color: var(--color-white);}
 	}
 
 	&.--light-blue {
-		background: linear-gradient(
-			135deg,
-			oklch(from var(--secondary) var(--400)) 0%,
-			oklch(from var(--primary) var(--300)) 100%
-		);
+		background: oklch(from var(--primary) var(--200));
+		& h3, p {color: var(--secondary);}
 	}
 
 	.expertise-card-title {
@@ -476,7 +454,6 @@ Homepage Components
 		font-family: "Century Gothic Bold";
 		margin-bottom: var(--space-sm);
 		text-align: center;
-		color: var(--color-white);
 	}
 
 	.expertise-card-description {
@@ -484,7 +461,6 @@ Homepage Components
 		line-height: var(--line-height-relaxed);
 		text-align: center;
 		opacity: 0.9;
-		color: var(--color-white);
 	}
 
 	&.expertise-card-1 {
