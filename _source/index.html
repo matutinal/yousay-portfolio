@@ -312,10 +312,8 @@ layout: base.html
       const detailCard = document.getElementById(`service-detail-${index}`);
       if (detailCard) {
         detailCard.style.display = "flex";
-        // Trigger animation after display is set
-        setTimeout(() => {
-          detailCard.classList.add("active");
-        }, 10);
+        detailCard.getBoundingClientRect(); // <-- forces the browser to compute the "before" state
+        detailCard.classList.add("active");
       }
     }
 
