@@ -1,16 +1,16 @@
 {
   "hero": {
-    "slogan": "Un objectif partagé :",
-    "subtitle": "Améliorer la <mark> performance RH   </mark> et managériale de votre organisation",
+    "slogan": "Youssou SEYE",
+    "subtitle": "Je consacre mon énergie et ma motivation à <mark> faire grandir </mark> les hommes et les organisations.",
     "image": "/assets/images/uploads/ys.jpeg",
     "image_alt": "Youssou SEYE Consultant"
   },
-  "services": {
-    "title": "Notre offre",
+  "values": {
+    "title": "",
     "items": [
       {
-        "title": "La fonction de DRH de transition",
-        "description": "Vous traversez une période de changement au sein de votre organisation et avez besoin d’un accompagnement stratégique et/ou opérationnel en ressources humaines ? Je me rends disponible sur cette période transitoire pour vous accompagner à porter vos défis avec expertise et efficacité.",
+        "title": "Mon moteur",
+        "description": "La lumière dans les yeux de mes interlocuteurs pour preuve de l’efficience de mon soutien.",
         "icon": "transition",
         "color": "light-blue",
         "details": "Detailed description of transition HR services..."

@@ -1,0 +1,60 @@
+
+/* Hero Section */
+.hero-section-qsn {
+  display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+  padding: var(--space-xxl) 0;
+  
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    
+  }
+
+  .hero-text {
+
+    text-align: center;
+
+    .hero-slogan {
+      font-size: var(--font-size-xxl);
+      font-weight: var(--font-weight-lg);
+      margin-bottom: var(--space-lg);
+      color: var(--color-text);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-xxl);
+      font-weight: var(--font-weight-xl);
+      line-height: var(--line-height-sm);
+      color: var(--color-text);
+    }
+  }
+
+  .hero-image {
+    position: relative;
+    margin-bottom: var(--space-lg);
+
+    img {
+      width: 25dvh;
+      height: 25dvh;
+      object-fit: cover;
+      border-radius: var(--border-radius-lg);
+    }
+
+    &::after {
+    display:none;
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: -20px;
+      width: 80px;
+      height: 80px;
+      background-image: url(../images/portfolio/strike.svg);
+      background-repeat: no-repeat;
+      z-index: 2;
+    }
+  }
+}

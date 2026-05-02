@@ -37,6 +37,7 @@ export default async function (eleventyConfig) {
       return (a.data.order || 0) - (b.data.order || 0);
     });
   });
+  
 
   /* --------------------------------------------------------------------------
   MarkdownIt settings

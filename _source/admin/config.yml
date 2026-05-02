@@ -99,6 +99,57 @@ collections:
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Excerpt", name: "excerpt", widget: "text"}
                   - {label: "Logo", name: "logo", widget: "image", required: false}
+      - label: "Qui sommes-nous"
+        name: "qui-sommes-nous"
+        file: "_source/_data/qui-sommes-nous.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Slogan", name: "slogan", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+          - label: "Values Section"
+            name: "values"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "values"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Icon", name: "icon", widget: "select", options: ["transition", "consulting", "coaching", "formation"]}
+                  - {label: "Color", name: "color", widget: "select", options: ["light-blue", "dark-blue"]}
+                  - {label: "Details", name: "details", widget: "markdown"}
+          - label: "Expertise Section"
+            name: "expertise"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Color", name: "color", widget: "select", options: ["dark-blue", "medium-blue", "light-blue"]}
+          - label: "Testimonials Section"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Featured Posts"
+                name: "featured_posts"
+                widget: "list"
+                fields:
+                  - {label: "Client", name: "client", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Excerpt", name: "excerpt", widget: "text"}
+                  - {label: "Logo", name: "logo", widget: "image", required: false}
       - label: "Site Settings"
         name: "site"
         file: "_source/_data/site.json"

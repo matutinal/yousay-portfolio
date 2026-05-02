@@ -18,7 +18,7 @@ layout: base.html
       <ul class="unlisted inline-flex gap-md align-items-center">
         <li><a href="#services" class="button --simple">Notre offre</a></li>
         <li>
-          <a href="/qui-sommes-nous/" class="button --simple">Qui sommes-nous</a>
+          <a href="#" class="button --simple">Qui sommes-nous</a>
         </li>
         <li><a href="/blog/" class="button --simple">Actualités</a></li>
         <button 
@@ -35,19 +35,23 @@ layout: base.html
 
 <main class="grid">
   <!-- Hero Section -->
-  <section class="hero-section">
+  <section class="hero-section-qsn">
+    
     <div class="span-10 start-2">
       <div class="hero-content">
         <div class="hero-text">
-          <h1 class="hero-slogan">{{ homepage.hero.slogan }}</h1>
-          <h2 class="hero-subtitle">{{ homepage.hero.subtitle }}</h2>
+          <h1 class="hero-slogan">{{ qui-sommes-nous.hero.slogan }}</h1>
+          
+          <div class="hero-image">
+            <img
+              src="{{ homepage.hero.image }}"
+              alt="{{ homepage.hero.image_alt }}"
+            />
+          </div>
+
+          <h2 class="hero-subtitle">{{ qui-sommes-nous.hero.subtitle }}</h2>
         </div>
-        <div class="hero-image">
-          <img
-            src="{{ homepage.hero.image }}"
-            alt="{{ homepage.hero.image_alt }}"
-          />
-        </div>
+        
       </div>
     </div>
   </section>
@@ -58,16 +62,16 @@ layout: base.html
   <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="span-10 start-2">
-      <h2 class="services-title">{{ homepage.services.title }}</h2>
+      <h2 class="services-title">{{ qui-sommes-nous.values.title }}</h2>
       <div class="services-grid">
-        {% for service in homepage.services.items %}
+        {% for value in qui-sommes-nous.values.items %}
         <div
           class="service-card --{{ service.color }}"
           data-service="{{ forloop.index0 }}"
         >
           <div class="service-icon --{{ service.icon }}"></div>
-          <h3 class="service-title">{{ service.title }}</h3>
-          <p class="service-description">{{ service.description }}</p>
+          <h3 class="service-title">{{ value.title }}</h3>
+          <p class="service-description">{{ value.description }}</p>
         </div>
         {% endfor %}
       </div>
