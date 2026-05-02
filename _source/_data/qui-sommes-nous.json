@@ -16,21 +16,21 @@
         "details": "Detailed description of transition HR services..."
       },
       {
-        "title": "Accompagnement et conseil",
-        "description": "Vous souhaitez transformer votre organisation et/ou optimiser la fonction ressources humaines ? Consultant RH spécialisé en accompagnement au changement, je vous propose des solutions sur mesure pour répondre à vos besoins spécifiques sur divers enjeux (stratégie, management,  dialogue social, SIRH,,...)",
+        "title": "Mes valeurs",
+        "description": "Intégrité                             Innovation\n\nCollaboration                     Engagement",
         "icon": "consulting",
         "color": "dark-blue",
         "details": "Detailed description of consulting services..."
       },
       {
-        "title": "Coaching",
-        "description": "Vous souhaitez un accompagnement autour d’objectifs personnels ou professionnels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équopes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
+        "title": "Ma manière de fonctionner",
+        "description": "Écoute active                      Proactivité\n\nAdaptabilité                         Excellence",
         "icon": "coaching",
         "color": "dark-blue",
         "details": "Detailed description of coaching services..."
       },
       {
-        "title": "Formation",
+        "title": "Mes expériences clients",
         "description": "Vous souhaitez renforcer les compétences de vos équipes ? J’assure vos formations sur toutes les thématiques ressources humaines. Un projet sur mesure sur divers sujets : droit social, maitrise de la (des) convention(s) collective(s) de votre secteur, gestion de la paie, GEPP, dialogue social et IRP....",
         "icon": "formation",
         "color": "light-blue",
