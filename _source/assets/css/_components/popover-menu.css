@@ -1,5 +1,5 @@
 popover-menu {
-	 display: grid;
+	display: grid;
     grid-template-columns: 1fr;
     align-items: center;
 
@@ -20,7 +20,9 @@ popover-menu {
 		overflow: visible;
 
 		&:not([popover]) {
-			position: absolute;
+			display: grid;
+    		grid-template-columns: 1fr;
+    		align-items: center;
 
 			&.anchor-right {
 				inset-inline-end: 0;
