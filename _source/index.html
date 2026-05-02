@@ -381,12 +381,17 @@ layout: base.html
     //   }
     // });
 
-    // Close detail card when clicking outside content
-    serviceDetailCards.forEach((card) => {
-      card.addEventListener("click", function (e) {
-        if (e.target === this) {
-          const index = this.id.split("-").pop();
-          hideServiceDetail(index);
+    // Close any visible detail card when clicking outside it
+    document.addEventListener("click", function (e) {
+      serviceDetailCards.forEach((card) => {
+        // Only check cards that are currently visible
+        if (card.style.display !== "none" && !card.contains(e.target)) {
+          // Don't close if the click was on a service-card "En savoir plus" button
+          // (otherwise opening and closing would conflict)
+          if (!e.target.closest(".service-card")) {
+            const index = card.id.split("-").pop();
+            hideServiceDetail(index);
+          }
         }
       });
     });
