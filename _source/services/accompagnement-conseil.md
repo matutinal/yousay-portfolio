@@ -20,7 +20,7 @@ benefits:
       sont prises en charge.
 closing_text: Ensemble, nous construirons les solutions RH adaptées à vos défis
   organisationnels.
-cta_text: J'exprime mon besoin
+cta_text: J’exprime mon besoin
 testimonials_title: Témoignages clients
 animation_direction: right
 ---

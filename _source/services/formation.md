@@ -12,7 +12,7 @@ benefits:
   - title: "Efficacité"
     description: "Méthodes pédagogiques interactives et orientées pratique"
 closing_text: "Développez les compétences de vos équipes avec des formations pratiques et efficaces."
-cta_text: "J'exprime mon besoin"
+cta_text: "J’exprime mon besoin"
 testimonials_title: "Témoignages clients"
 animation_direction: "left"
 ---

@@ -27,7 +27,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "description", widget: "text"}
       - {label: "Closing Text", name: "closing_text", widget: "text"}
-      - {label: "CTA Text", name: "cta_text", widget: "string", default: "J'exprime mon besoin"}
+      - {label: "CTA Text", name: "cta_text", widget: "string", default: "J’exprime mon besoin"}
       - {label: "Testimonials Title", name: "testimonials_title", widget: "string", default: "Témoignages clients"}
       - {label: "Animation Direction", name: "animation_direction", widget: "select", options: ["top", "right", "bottom", "left"]}
 
