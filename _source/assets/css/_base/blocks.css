@@ -52,7 +52,51 @@ body {
 	font-family: var(--font-family-main);
 	font-size: var(--font-size-base);
 	line-height: var(--line-height-fluid);
+	
+	
+	background-color: var(--color-bg);
+  background-image:
+    /* Odd "rows" — dots at y=6px */
+    radial-gradient(circle at 11px  6px,  rgba(173,216,230,0.30) 1.3px, transparent 1.3px),
+    radial-gradient(circle at 37px  6px,  rgba(173,216,230,0.25) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 64px  6px,  rgba(173,216,230,0.33) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 98px  6px,  rgba(173,216,230,0.22) 1.2px, transparent 1.2px),
+    radial-gradient(circle at 133px 6px,  rgba(173,216,230,0.28) 1.2px, transparent 1.2px),
+    radial-gradient(circle at 161px 6px,  rgba(173,216,230,0.35) 1.4px, transparent 1.4px),
+	radial-gradient(circle at 177px 6px,  rgba(173,216,230,0.35) 1.3px, transparent 1.4px),
+    /* Even "rows" — dots at y=16px with different positions */
+    radial-gradient(circle at 7px   16px, rgba(173,216,230,0.27) 1.6px, transparent 1.6px),
+    radial-gradient(circle at 28px  16px, rgba(173,216,230,0.32) 1.4px, transparent 1.4px),
+    radial-gradient(circle at 55px  16px, rgba(173,216,230,0.24) 1.2px, transparent 1.2px),
+    radial-gradient(circle at 82px  16px, rgba(173,216,230,0.30) 1.3px, transparent 1.3px),
+    radial-gradient(circle at 113px 16px, rgba(173,216,230,0.20) 1.6px, transparent 1.6px),
+    radial-gradient(circle at 148px 16px, rgba(173,216,230,0.33) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 172px 16px, rgba(173,216,230,0.26) 1.5px, transparent 1.5px),
+	radial-gradient(circle at 184px 16px, rgba(173,216,230,0.26) 1.2px, transparent 1.5px);
+  background-size: 200px 20px;
+  background-repeat: repeat;
+
 }
+
+
+		/* Keyframe animation for moving and changing colors */
+		@keyframes move-and-color {
+		0% {
+			background-position: 0 0;
+		}
+		50% {
+			background-position: 25px 25px;
+		}
+		100% {
+			background-position: 50px 50px;
+		}
+		}
+
+		/* Hover effect */
+		body:hover {
+		animation: move-and-color 3s linear infinite;
+		}
+
 
 :where(animate-on-scroll, details-menu) {
 	display: contents;
