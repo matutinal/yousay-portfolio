@@ -1,0 +1,249 @@
+---
+title: Mentions légales
+description: "Mentions légales du site {{ site.title }}"
+layout: base.html
+---
+
+<header class="grid">
+  <nav class="flex no-wrap justify-between align-items-center py-md">
+    <a
+      class="site-title font-size-xl font-weight-xxl line-height-flush undecorated"
+      href="/"
+    >
+    <img src="{{ site.logo }}" alt="logo"/>
+      <span class="pl-md">{{ site.title }}</span>
+    </a>
+
+    <div class="inline-flex gap-md align-items-center">
+      <ul class="unlisted inline-flex gap-md align-items-center">
+        <li>
+          <a href="/qui-sommes-nous/" class="button --simple">Qui sommes-nous</a>
+        </li>
+
+        <li><a href="/" class="button --simple">Notre offre</a></li>
+
+        <!-- <li><a href="/blog/" class="button --simple">Actualités</a></li> -->
+        <button
+              class="button --primary"
+              popovertarget="contact-form-popover"
+              aria-haspopup="dialog"
+            >
+              Contact
+        </button>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="grid">
+  <section class="span-10 start-2 py-xl">
+    <h1 class="font-size-xxxl font-weight-xxl line-height-flush mb-lg">Mentions légales</h1>
+
+    <div class="legal-content line-length-lg">
+      <p class="font-size-sm color --text-muted mb-xl">Dernière mise à jour : [DATE]</p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">1. Éditeur du site</h2>
+      <p class="mb-sm">
+        Le site <strong>{{ site.url }}</strong> est édité par :
+      </p>
+      <p class="mb-sm">
+        <strong>[RAISON SOCIALE]</strong><br/>
+        [FORME JURIDIQUE] au capital de [MONTANT] €<br/>
+        Immatriculée au RCS de [VILLE] sous le numéro [NUMÉRO RCS]<br/>
+        Numéro de TVA intracommunautaire : [NUMÉRO TVA]
+      </p>
+      <p class="mb-sm">
+        <strong>Siège social :</strong><br/>
+        [ADRESSE COMPLÈTE]
+      </p>
+      <p class="mb-sm">
+        <strong>Téléphone :</strong> [NUMÉRO DE TÉLÉPHONE]<br/>
+        <strong>Email :</strong> [ADRESSE EMAIL]
+      </p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">2. Directeur de la publication</h2>
+      <p class="mb-sm">
+        Le directeur de la publication est [NOM DU DIRECTEUR DE PUBLICATION], en sa qualité de [FONCTION].
+      </p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">3. Hébergeur du site</h2>
+      <p class="mb-sm">
+        Le site est hébergé par :
+      </p>
+      <p class="mb-sm">
+        <strong>[NOM DE L'HÉBERGEUR]</strong><br/>
+        [ADRESSE DE L'HÉBERGEUR]<br/>
+        <strong>Téléphone :</strong> [NUMÉRO DE TÉLÉPHONE]<br/>
+        <strong>Site web :</strong> <a href="[URL HÉBERGEUR]" target="_blank" rel="noopener noreferrer">[URL HÉBERGEUR]</a>
+      </p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">4. Propriété intellectuelle</h2>
+      <p class="mb-sm">
+        L'ensemble des éléments constituant le site (textes, graphismes, logiciels, photographies, images, vidéos, sons, plans,
+        logos, marques, etc.) est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.
+      </p>
+      <p class="mb-sm">
+        Toute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site,
+        quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de l'éditeur.
+      </p>
+      <p class="mb-sm">
+        Toute exploitation non autorisée du site ou de l'un quelconque de ses éléments sera considérée comme constitutive
+        d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de la
+        Propriété Intellectuelle.
+      </p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">5. Protection des données personnelles</h2>
+      <p class="mb-sm">
+        Conformément à la loi Informatique et Libertés du 6 janvier 1978 modifiée et au Règlement Général sur la
+        Protection des Données (RGPD - Règlement UE 2016/679), vous disposez des droits suivants sur vos données :
+      </p>
+      <ul class="mb-sm pl-lg">
+        <li>Droit d'accès (art. 15 RGPD)</li>
+        <li>Droit de rectification (art. 16 RGPD)</li>
+        <li>Droit d'effacement (art. 17 RGPD)</li>
+        <li>Droit à la limitation du traitement (art. 18 RGPD)</li>
+        <li>Droit d'opposition (art. 21 RGPD)</li>
+        <li>Droit à la portabilité (art. 20 RGPD)</li>
+      </ul>
+      <p class="mb-sm">
+        Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : <strong>[ADRESSE EMAIL CNIL/DPO]</strong>
+      </p>
+      <p class="mb-sm">
+        Le cas échéant, vous disposez également du droit d'introduire une réclamation auprès de la
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">CNIL</a> (Commission Nationale
+        de l'Informatique et des Libertés).
+      </p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">6. Cookies</h2>
+      <p class="mb-sm">
+        Le site {{ site.url }} peut être amené à utiliser des cookies pour améliorer l'expérience utilisateur
+        et réaliser des statistiques de fréquentation anonymes.
+      </p>
+      <p class="mb-sm">
+        Conformément à la réglementation en vigueur, un bandeau d'information est affiché lors de votre première
+        visite pour vous permettre d'accepter ou de refuser l'utilisation des cookies.
+      </p>
+      <p class="mb-sm">
+        La durée de validité du consentement au dépôt des cookies est de [DURÉE] mois.
+      </p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">7. Limitation de responsabilité</h2>
+      <p class="mb-sm">
+        L'éditeur s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur le site,
+        dont il se réserve le droit de corriger le contenu à tout moment et sans préavis. Toutefois,
+        l'éditeur ne peut garantir l'exhaustivité ou l'absence de modification par un tiers.
+      </p>
+      <p class="mb-sm">
+        L'éditeur décline toute responsabilité quant aux éventuels dommages directs ou indirects pouvant résulter
+        de l'accès ou de l'utilisation du site, y compris l'inaccessibilité, les pertes de données,
+        ou la présence de virus.
+      </p>
+      <p class="mb-sm">
+        Le site peut contenir des liens hypertextes vers d'autres sites. L'éditeur n'exerce aucun contrôle
+        sur ces sites et décline toute responsabilité quant à leur contenu.
+      </p>
+
+      <h2 class="font-size-xl font-weight-xl mb-md mt-xl">8. Droit applicable et juridiction compétente</h2>
+      <p class="mb-sm">
+        Les présentes mentions légales sont régies par le droit français. En cas de litige, et à défaut
+        d'accord amiable, les tribunaux français seront seuls compétents.
+      </p>
+      <p class="mb-sm">
+        Conformément à l'article L.612-1 du Code de la consommation, le consommateur peut recourir
+        gratuitement à un médiateur de la consommation en cas de litige.
+      </p>
+    </div>
+  </section>
+</main>
+
+<popover-menu>
+  <div
+    id="contact-form-popover"
+    popover="auto"
+    class="contact-form-popover"
+  >
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form"
+    >
+      <!-- Hidden fields for Netlify -->
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <h3 class="form-title">Contactez-nous</h3>
+
+      <div class="form-group">
+        <label for="name">Nom complet *</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+
+      <div class="form-group">
+        <label for="service">Service :</label>
+        <select id="service" name="service">
+          <option value="">Sélectionnez un service</option>
+          <option value="accompagnement">Accompagnement & Conseil</option>
+          <option value="coaching">Coaching</option>
+          <option value="drh">DRH de transition</option>
+          <option value="formation">Formation</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="button --primary">Envoyer</button>
+        <button type="button" class="button --simple" popovertarget="contact-form-popover" popovertargetaction="hide">
+          Annuler
+        </button>
+      </div>
+
+      <div class="form-status hidden" id="form-status"></div>
+    </form>
+  </div>
+  </popover-menu>
+
+<footer
+  class=""
+
+>
+  <div class="center">
+    <p class="">
+      © 2026 {{ site.title }}.
+      <a href="/mentions-legales/">Mentions légales</a
+      >
+    </p>
+      <a
+        href="https://linkedin.com/company/yousay-consulting"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <a
+        href="mailto:contact@yousay-consulting.fr"
+        >Email</a
+      >
+    <p>
+      Conception par
+      <a href="https://matutinal.fr"
+      target="_blank"
+      >matutinal</a>
+    </p>
+  </div>
+</footer>
