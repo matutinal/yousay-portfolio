@@ -194,6 +194,11 @@ Homepage Components
 		opacity: 1;
 	}
 
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-lg);
+	}
+
 	/* Animation directions */
 	&[data-direction="top"] {
 		transform: translateY(-100%);
