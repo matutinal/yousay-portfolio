@@ -366,6 +366,7 @@ Homepage Components
 @media (max-width: 768px) {
 	.service-detail-card {
 		min-height: 100dvh;
+		overflow-y: auto;  
 		padding: var(--space-lg);
 
 		.service-detail-content {
