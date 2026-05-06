@@ -439,12 +439,12 @@ Homepage Components
 	backface-visibility: hidden;
 	transform: translateZ(0);
 
-	&.--dark-blue {
+	&.--medium-blue {
 		background: oklch(from var(--secondary) var(--500));
 		& h3, p {color: var(--color-white);}
 	}
 
-	&.--medium-blue {
+	&.--dark-blue {
 		background: var(--secondary);
 		& h3, p {color: var(--color-white);}
 	}
@@ -608,6 +608,7 @@ Homepage Components
 	border-left: 4px solid oklch(from var(--primary) var(--300));
 
 	.testimonial-client {
+		font-family:'Century Gothic Bold';
 		font-size: var(--font-size-lg);
 		font-weight: var(--font-weight-lg);
 		color: oklch(from var(--secondary) var(--500));
@@ -661,11 +662,7 @@ Homepage Components
 /*Footer */
 
 footer {
-	background: linear-gradient(
-		135deg,
-		oklch(from var(--secondary) var(--800)) 0%,
-		oklch(from var(--secondary) var(--500)) 100%
-	);
+	background: var(--secondary);
 
 	p,
 	a {
