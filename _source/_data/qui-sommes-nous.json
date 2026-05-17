@@ -5,6 +5,9 @@
     "image": "/assets/images/uploads/ys.jpeg",
     "image_alt": "Youssou SEYE Consultant"
   },
+  "story": {
+    "parcours": "data Mon parcours data"
+  },
   "values": {
     "title": "",
     "items": [

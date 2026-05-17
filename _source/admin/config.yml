@@ -111,6 +111,11 @@ collections:
               - {label: "Subtitle", name: "subtitle", widget: "text"}
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+          - label: "Story Section"
+            name: "story"
+            widget: "object"
+            fields:
+              - {label: "Parcours", name: "parcours", widget: "text"}
           - label: "Values Section"
             name: "values"
             widget: "object"
