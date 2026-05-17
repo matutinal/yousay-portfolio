@@ -173,6 +173,13 @@ Homepage Components
 	}
 }
 
+/* Responsive design for Service More */
+@media (max-width: 768px) {
+	.service-description{
+		margin-bottom: 2dvh;
+	}
+}
+
 /* Service Detail Cards */
 .service-detail-card {
 	position: absolute;
