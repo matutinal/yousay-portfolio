@@ -164,19 +164,13 @@ Homepage Components
 		font-size: var(--font-size-sm);
 		line-height: var(--line-height-relaxed);
 		opacity: 0.9;
+		margin-bottom: 2dvh;
 	}
 
 	.service-more {
 		position: absolute;
 		right: 1dvh;
 		bottom: 1dvh;
-	}
-}
-
-/* Responsive design for Service More */
-@media (max-width: 768px) {
-	.service-description{
-		margin-bottom: 2dvh;
 	}
 }
 
