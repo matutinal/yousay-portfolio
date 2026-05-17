@@ -371,7 +371,7 @@ Homepage Components
 /* Responsive design for service detail cards */
 @media (max-width: 768px) {
 	.service-detail-card {
-		position:absolute;
+		position:fixed;
 		height: 100%;
 		overflow-y: auto;  
 		padding: var(--space-lg);
