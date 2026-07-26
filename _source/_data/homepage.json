@@ -63,21 +63,15 @@
     "featured_posts": [
       {
         "client": "APAJH du Loiret",
-        "title": "Audit organisationnel et managérial",
-        "excerpt": "Saepe quis atque ipsum veniam qui earum. Laboriosam est dolorem at ducimus suscipit quis. Perferendis occaecati rerum aliquid.",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Audit organisationnel et managérial",
         "logo": "/assets/images/uploads/apajh-loiret.png"
       },
       {
-        "client": "ARISSE",
-        "title": "Transformation digitale RH",
-        "excerpt": "Laboriosam est dolorem at ducimus suscipit quis. Perferendis occaecati.",
-        "logo": "/assets/images/clients/arisse-logo.png"
-      },
-      {
         "client": "Apei Soissons",
-        "title": "Accompagnement managérial",
-        "excerpt": "Erferendis occaecati rerum aliquid. Saepe quis atque ipsum veniam qui earum.",
-        "logo": "/assets/images/clients/apei-logo.png"
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Accompagnement à la structuration de la fonction RH, des outils et des process",
+        "logo": "/assets/images/uploads/apei-soissons.png"
       }
     ]
   }
