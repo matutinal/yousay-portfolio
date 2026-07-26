@@ -162,6 +162,54 @@
         "title": "SIRH",
         "excerpt": "Optimisation SIRH",
         "logo": "/assets/images/uploads/societe_philanthropique.png"
+      },
+      {
+        "client": "APAJH Val d'Oise",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Cadrage organisation cible DG/DOP",
+        "logo": "/assets/images/uploads/apajh-valdoise.png"
+      },
+      {
+        "client": "Fédération de l'aide à domicile",
+        "excerpt": "Cycle formation de 50 managers de proximité au droit du travail",
+        "title": "FORMATION",
+        "logo": "/assets/images/uploads/federation_aad.png"
+      },
+      {
+        "client": "UNA",
+        "excerpt": "Accompagnement déploiement pédagogique et opérationnel de l’avenant 43 (une cinquantaine d’association et près de 120 personnes formées)",
+        "title": "FORMATION",
+        "logo": "/assets/images/uploads/una.png"
+      },
+      {
+        "client": "ADSEA77",
+        "excerpt": "Coaching individuel manager",
+        "title": "COACHING",
+        "logo": "/assets/images/uploads/adsea77.png"
+      },
+      {
+        "client": "France Horizon",
+        "title": "COACHING",
+        "excerpt": "Coaching individuel manager",
+        "logo": "/assets/images/uploads/france_horizon.png"
+      },
+      {
+        "client": "EntrAide Union",
+        "title": "COACHING",
+        "excerpt": "Coaching individuel manager",
+        "logo": "/assets/images/uploads/entraide_union.png"
+      },
+      {
+        "client": "vivre et devenir",
+        "title": "DRH",
+        "excerpt": "Pilotage stratégique et opérationnel RH",
+        "logo": "/assets/images/uploads/vivre-devenir.png"
+      },
+      {
+        "client": "Armée du Salut",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Accompagnement Opérationnel RH",
+        "logo": "/assets/images/uploads/fads.png"
       }
     ]
   }
