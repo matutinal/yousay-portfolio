@@ -90,6 +90,30 @@
         "title": "AUDIT ET CONSEIL",
         "excerpt": "Audit Pilotage RH",
         "logo": "/assets/images/uploads/ccaf.png"
+      },
+      {
+        "client": "Championnet Associations",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Audit Technique Paie",
+        "logo": "/assets/images/uploads/championnet.png"
+      },
+      {
+        "client": "EntrAide Union",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Audit organisationnel et managérial",
+        "logo": "/assets/images/uploads/entraide_union.png"
+      },
+      {
+        "client": "Epsoms Intercommunal",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Audit RH",
+        "logo": "/assets/images/uploads/eps_oms.png"
+      },
+      {
+        "client": "Familles Rurales",
+        "title": "FORMATION",
+        "excerpt": "Audit et Formation/action mise en œuvre évolution CCN BAD (Avenant 43)",
+        "logo": "/assets/images/uploads/familles_rurales.png"
       }
     ]
   }
