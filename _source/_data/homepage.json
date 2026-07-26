@@ -117,9 +117,33 @@
       },
       {
         "client": "ISM Interprétariat",
-        "title": "AUDIT ET CONSEIL DRH DE TRANSITION",
-        "excerpt": "Audit paie et Politique de rémunération\n\nDirection RH (16 mois)",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Audit paie et Politique de rémunération",
         "logo": "/assets/images/uploads/ism-interpretariat.png"
+      },
+      {
+        "client": "ISM Interprétariat",
+        "title": "DRH DE TRANSITION",
+        "excerpt": "Direction RH (16 mois)",
+        "logo": "/assets/images/uploads/ism-interpretariat.png"
+      },
+      {
+        "client": "Interlogement93",
+        "title": "FORMATION",
+        "excerpt": "Formation CCN 66 et Droit social",
+        "logo": "/assets/images/uploads/interlogement93.png"
+      },
+      {
+        "client": "OPPELIA",
+        "title": "DRH DE TRANSITION",
+        "excerpt": "Direction RH (remplacement congé maternité)",
+        "logo": "/assets/images/uploads/oppelia.png"
+      },
+      {
+        "client": "OPPELIA",
+        "title": "SIRH",
+        "excerpt": "Accompagnement Projet SIRH (GTA)",
+        "logo": "/assets/images/uploads/oppelia.png"
       }
     ]
   }
