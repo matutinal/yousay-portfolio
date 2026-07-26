@@ -84,6 +84,12 @@
         "title": "COACHING",
         "excerpt": "Coaching Comité de Direction",
         "logo": "/assets/images/uploads/ccfd-terre_solidaire.png"
+      },
+      {
+        "client": "Collectif Chrétien d'Action Fraternelle",
+        "title": "AUDIT ET CONSEIL",
+        "excerpt": "Audit Pilotage RH",
+        "logo": "/assets/images/uploads/ccaf.png"
       }
     ]
   }
