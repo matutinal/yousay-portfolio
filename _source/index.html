@@ -149,9 +149,6 @@ layout: base.html
         <div class="testimonials-track">
           {% for testimonial in homepage.testimonials.featured_posts %}
           <div class="testimonial-card">
-            <h3 class="testimonial-client">{{ testimonial.client }}</h3>
-            <h4 class="testimonial-title">{{ testimonial.title }}</h4>
-            <p class="testimonial-excerpt">{{ testimonial.excerpt }}</p>
             {% if testimonial.logo %}
             <img
               src="{{ testimonial.logo }}"
@@ -159,6 +156,9 @@ layout: base.html
               class="testimonial-logo"
             />
             {% endif %}
+            <h3 class="testimonial-client">{{ testimonial.client }}</h3>
+            <h4 class="testimonial-title">{{ testimonial.title }}</h4>
+            <p class="testimonial-excerpt">{{ testimonial.excerpt }}</p>
           </div>
           {% endfor %}
         </div>
