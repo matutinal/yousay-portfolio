@@ -72,6 +72,18 @@
         "title": "AUDIT ET CONSEIL",
         "excerpt": "Accompagnement à la structuration de la fonction RH, des outils et des process",
         "logo": "/assets/images/uploads/apei-soissons.png"
+      },
+      {
+        "client": "ARISSE",
+        "title": "FORMATION",
+        "excerpt": "Formation/Action posture employeur et Dialogue social",
+        "logo": "/assets/images/uploads/arisse.png"
+      },
+      {
+        "client": "CCFD-Terre Solidaire",
+        "title": "COACHING",
+        "excerpt": "Coaching Comité de Direction",
+        "logo": "/assets/images/uploads/ccfd-terre_solidaire.png"
       }
     ]
   }
