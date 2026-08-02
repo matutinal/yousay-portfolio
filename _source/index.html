@@ -76,8 +76,18 @@ layout: base.html
         {% endfor %}
       </div>
 
-            <!-- Detailed Service Cards -->
+                  <!-- Detailed Service Cards -->
       {% for service in collections.services %}
+      {%- assign service_name = service.data.title | upcase -%}
+      {%- if service_name == "DRH DE TRANSITION" -%}
+        {%- assign match_title = "DRH DE TRANSITION" -%}
+      {%- elsif service_name == "ACCOMPAGNEMENT ET CONSEIL" -%}
+        {%- assign match_title = "AUDIT ET CONSEIL" -%}
+      {%- else -%}
+        {%- assign match_title = service_name -%}
+      {%- endif -%}
+      {%- assign matching_testimonials = homepage.testimonials.featured_posts | where: "title", match_title -%}
+
       <div
         id="service-detail-{{ forloop.index0 }}"
         class="service-detail-card"
@@ -87,62 +97,67 @@ layout: base.html
         <button
           class="service-detail-close"
           data-close="service-detail-{{ forloop.index0 }}"
-        >
-        </button>
+        ></button>
+
         <div class="service-detail-content">
-          <div class="service-detail-main">
+          <!-- Colonne gauche : texte + CTA -->
+          <div class="service-detail-left">
             <h2 class="pretty">{{ service.data.title }}</h2>
             <p class="balance">{{ service.data.description }}</p>
-          </div>
 
-          <div class="service-detail-benefits">
-            <button class="service-detail-cta --primary"
-              popovertarget="contact-form-popover"
-              aria-haspopup="dialog">
-              {{ service.data.cta_text }}
-            </button>
-            <h3>{{ service.data.benefits_title }}</h3>
-            <ul>
-              {% for benefit in service.data.benefits %}
-              <li>
-                <strong>♦ {{ benefit.title }} :</strong> {{ benefit.description }}
-              </li>
-              {% endfor %}
-            </ul>
-            <p>{{ service.data.closing_text }}</p>
-          </div>
-        </div>
-
-        {%- assign service_name = service.data.title | upcase -%}
-        {%- if service_name == "DRH DE TRANSITION" -%}
-          {%- assign match_title = "DRH DE TRANSITION" -%}
-        {%- elsif service_name == "ACCOMPAGNEMENT ET CONSEIL" -%}
-          {%- assign match_title = "AUDIT ET CONSEIL" -%}
-        {%- else -%}
-          {%- assign match_title = service_name -%}
-        {%- endif -%}
-
-        {%- assign matching_testimonials = homepage.testimonials.featured_posts | where: "title", match_title -%}
-        {%- if matching_testimonials.size > 0 -%}
-        <div class="service-detail-testimonials-section">
-          <h3 class="pretty">Organisations accompagnées</h3>
-          <div class="service-detail-testimonials-scroll">
-            {% for testimonial in matching_testimonials %}
-            <div class="service-detail-testimonial-item">
-              {% if testimonial.logo %}
-              <img
-                src="{{ testimonial.logo }}"
-                alt="{{ testimonial.client }} logo"
-                class="service-detail-testimonial-logo"
-              />
-              {% endif %}
-              <span class="service-detail-testimonial-client">{{ testimonial.client }}</span>
-              <p class="service-detail-testimonial-excerpt">{{ testimonial.excerpt }}</p>
+            <div class="service-detail-benefits">
+              <h3>{{ service.data.benefits_title }}</h3>
+              <ul>
+                {% for benefit in service.data.benefits %}
+                <li>
+                  <strong>♦ {{ benefit.title }} :</strong> {{ benefit.description }}
+                </li>
+                {% endfor %}
+              </ul>
+              <p>{{ service.data.closing_text }}</p>
             </div>
-            {% endfor %}
+
+            <div class="service-detail-cta-wrapper">
+              <button class="service-detail-cta --primary"
+                popovertarget="contact-form-popover"
+                aria-haspopup="dialog">
+                {{ service.data.cta_text }}
+              </button>
+            </div>
           </div>
+
+          <!-- Colonne droite : logos carousel -->
+                    {%- if matching_testimonials.size > 0 -%}
+          <div class="service-detail-testimonials">
+            <h3 class="pretty">Organisations accompagnées</h3>
+
+            <div class="testimonial-carousel" id="testimonial-carousel-{{ forloop.index0 }}">
+              <div class="testimonial-carousel-viewport">
+                <div class="testimonial-carousel-track">
+                  {% for testimonial in matching_testimonials %}
+                  <div class="testimonial-carousel-item">
+                    {% if testimonial.logo %}
+                    <div class="testimonial-carousel-logo-container">
+                      <img
+                        src="{{ testimonial.logo }}"
+                        alt="{{ testimonial.client }} logo"
+                        class="testimonial-carousel-logo"
+                      />
+                    </div>
+                    {% endif %}
+                    <div class="testimonial-carousel-info">
+                      <span class="testimonial-carousel-client">{{ testimonial.client }}</span>
+                      <p class="testimonial-carousel-excerpt">{{ testimonial.excerpt }}</p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="testimonial-carousel-dots"></div>
+            </div>
+          </div>
+          {%- endif -%}
         </div>
-        {%- endif -%}
       </div>
       {% endfor %}
     </div>
@@ -356,6 +371,25 @@ document.addEventListener("DOMContentLoaded", function () {
         detailCard.style.display = "flex";
         detailCard.getBoundingClientRect(); // <-- forces the browser to compute the "before" state
         detailCard.classList.add("active");
+        // Function to show service detail card
+function showServiceDetail(index) {
+  const detailCard = document.getElementById(`service-detail-${index}`);
+  if (detailCard) {
+    detailCard.style.display = "flex";
+    detailCard.getBoundingClientRect();
+    detailCard.classList.add("active");
+
+    // 🔧 Initialize carousel once the card is visible
+    const carousel = detailCard.querySelector(".detail-carousel");
+    if (carousel) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          initDetailCarousel(carousel);
+        });
+      });
+        }
+      }
+    }
       }
     }
 
@@ -446,5 +480,53 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.transform = 'translateX(0) rotate(0)';
       });
     }
-  });
+        // --- Testimonial carousel: 3 items per view ---
+    document.querySelectorAll(".testimonial-carousel").forEach((carousel) => {
+      const viewport = carousel.querySelector(".testimonial-carousel-viewport");
+      const track    = carousel.querySelector(".testimonial-carousel-track");
+      const items    = carousel.querySelectorAll(".testimonial-carousel-item");
+      const dotsContainer = carousel.querySelector(".testimonial-carousel-dots");
+
+      if (items.length <= 3) {
+        dotsContainer.style.display = "none";
+        return;
+      }
+
+      // ---------- dimensions ----------
+      const PER_VIEW = 3;
+      const ITEM_H   = 110;          // px, matches CSS height
+      viewport.style.height = (PER_VIEW * ITEM_H) + "px";
+
+      const totalPages = Math.ceil(items.length / PER_VIEW);
+      let currentPage = 0;
+
+      // ---------- dot buttons ----------
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement("button");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToPage(i));
+        dotsContainer.appendChild(dot);
+      }
+      const dots = dotsContainer.querySelectorAll("button");
+
+      // ---------- page navigation ----------
+      function goToPage(page) {
+        currentPage = page;
+        track.style.transform = `translateY(-${currentPage * PER_VIEW * ITEM_H}px)`;
+        dots.forEach((d, i) => d.classList.toggle("active", i === currentPage));
+      }
+
+      // ---------- auto-advance ----------
+      let interval = setInterval(() => {
+        goToPage((currentPage + 1) % totalPages);
+      }, 4000);
+
+      carousel.addEventListener("mouseenter", () => clearInterval(interval));
+      carousel.addEventListener("mouseleave", () => {
+        interval = setInterval(() => {
+          goToPage((currentPage + 1) % totalPages);
+        }, 4000);
+      });
+    });
+    });
 </script>
