@@ -979,5 +979,13 @@ footer {
 
 	.testimonial-nav {
  	 display: none;
-}
+	}
+
+	.cta-title {
+	font-family: "Century Gothic Bold";
+	font-size: var(--font-size-xl);
+	font-weight: var(--font-weight-xl);
+	color: var(--color-white);
+	margin-bottom: var(--space-md);
+	}
 }
