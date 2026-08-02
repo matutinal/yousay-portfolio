@@ -945,31 +945,31 @@ footer {
 
     @keyframes expertise-card-1 {
         0%  {}
-        20% { transform: translateX(70px) rotate(12deg); }
+        30% { transform: translateX(70px) rotate(12deg); }
+        35% { transform: translateX(-15px); z-index: 1; }
         40% { transform: translateX(-15px); z-index: 1; }
-        55% { transform: translateX(-15px); z-index: 1; }
-        70% { transform: translateX(-8px);  z-index: 2; }
-        85% { transform: translateX(-8px);  z-index: 2; }
+        60% { transform: translateX(-8px);  z-index: 2; }
+        80% { transform: translateX(-8px);  z-index: 2; }
         100% { transform: translateX(0);     z-index: 3; }
     }
 
     @keyframes expertise-card-2 {
         0%  {}
-        20% { transform: translateX(0); }
-        40% { transform: translateX(8px);  z-index: 3; }
-        55% { transform: translateX(80px) rotate(12deg); }
-        70% { transform: translateX(-8px); z-index: 1; }
-        85% { transform: translateX(-8px); z-index: 1; }
+        30% { transform: translateX(0); }
+        35% { transform: translateX(8px);  z-index: 3; }
+        40% { transform: translateX(80px) rotate(12deg); }
+        60% { transform: translateX(-8px); z-index: 1; }
+        80% { transform: translateX(-8px); z-index: 1; }
         100% { transform: translateX(0);    z-index: 2; }
     }
 
     @keyframes expertise-card-3 {
         0%  { z-index: 1; }
-        20% { transform: translateX(0); }
+        30% { transform: translateX(0); }
+        35% { transform: translateX(8px);  z-index: 2; }
         40% { transform: translateX(8px);  z-index: 2; }
-        55% { transform: translateX(8px);  z-index: 2; }
-        70% { transform: translateX(15px); z-index: 3; }
-        85% { transform: translateX(85px) rotate(12deg); }
+        60% { transform: translateX(15px); z-index: 3; }
+        80% { transform: translateX(85px) rotate(12deg); }
         100% { transform: translateX(0);    z-index: 1; }
     }
 
