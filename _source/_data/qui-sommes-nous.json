@@ -31,13 +31,6 @@
         "icon": "coaching",
         "color": "dark-blue",
         "details": "Detailed description of coaching services..."
-      },
-      {
-        "title": "Mes expériences clients",
-        "description": "Texte à écrire",
-        "icon": "formation",
-        "color": "light-blue",
-        "details": "Detailed description of training services..."
       }
     ]
   },

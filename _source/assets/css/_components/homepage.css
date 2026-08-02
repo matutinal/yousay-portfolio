@@ -474,7 +474,7 @@ Homepage Components
 	&.expertise-card-1 {
 		z-index: 3;
 		margin-left: 20px;
-		animation-duration: 18s;
+		animation-duration: 15s;
 		animation-name: expertise-card-1;
 		animation-iteration-count: infinite;
 	}
@@ -482,14 +482,14 @@ Homepage Components
 	&.expertise-card-2 {
 		z-index: 2;
 		margin-left: 10px;
-		animation-duration: 18s;
+		animation-duration: 15s;
 		animation-name: expertise-card-2;
 		animation-iteration-count: infinite;
 	}
 
 	&.expertise-card-3 {
 		z-index: 1;
-		animation-duration: 18s;
+		animation-duration: 15s;
 		animation-name: expertise-card-3;
 		animation-iteration-count: infinite;
 	}
@@ -513,7 +513,7 @@ Homepage Components
 		transform: translateX(-10px);
 		z-index: 2;
 	} /* to middle */
-	83.33333% {
+	99% {
 		transform: translateX(-10px);
 		z-index: 2;
 	}
@@ -540,7 +540,7 @@ Homepage Components
 		transform: translateX(-10px);
 		z-index: 1;
 	} /* to back */
-	83.33333% {
+	99% {
 		transform: translateX(-10px);
 		z-index: 1;
 	} /* stay still */
