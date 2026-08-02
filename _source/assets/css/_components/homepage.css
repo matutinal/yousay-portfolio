@@ -850,6 +850,54 @@ Homepage Components
 	}
 }
 
+/* CTA Section */
+.cta-section {
+	padding: var(--space-xxl) 0;
+	text-align: center;
+}
+
+.cta-content {
+	background: linear-gradient(
+		135deg,
+		oklch(from var(--secondary) var(--500)),
+		var(--secondary)
+	);
+	border-radius: var(--border-radius-lg);
+	padding: var(--space-xxl) var(--space-xl);
+}
+
+.cta-title {
+	font-family: "Century Gothic Bold";
+	font-size: var(--font-size-xxl);
+	font-weight: var(--font-weight-xl);
+	color: var(--color-white);
+	margin-bottom: var(--space-md);
+}
+
+.cta-subtitle {
+	font-size: var(--font-size-lg);
+	color: oklch(from var(--color-white) l c h / 0.85);
+	margin-bottom: var(--space-xl);
+	max-width: 600px;
+	margin-inline: auto;
+	line-height: var(--line-height-relaxed);
+	text-wrap: balance;
+}
+
+.cta-button {
+	font-size: var(--font-size-lg);
+	padding: var(--space-md) var(--space-xl);
+	background: var(--color-white);
+	color: var(--secondary);
+	border-color: var(--color-white);
+
+	&:hover {
+		background: transparent;
+		color: var(--color-white);
+		border-color: var(--color-white);
+	}
+}
+
 /*Footer */
 
 footer {
@@ -928,4 +976,8 @@ footer {
 	.testimonial-card {
 		flex: 0 0 100%;
 	}
+
+	.testimonial-nav {
+ 	 display: none;
+}
 }

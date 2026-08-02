@@ -1,7 +1,7 @@
 /* Contact Form Popover Styles */
 .contact-form-popover {
-	inline-size: min(90vw, 32rem);
-	max-inline-size: 32rem;
+	inline-size: min(90vw, 48rem);
+	max-inline-size: 48rem;
 	padding: var(--space-lg);
 	background-color: var(--color-bg);
 	border: var(--border-width-md) solid var(--color-border);
@@ -15,8 +15,8 @@
 }
 
 .contact-form {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	gap: var(--space-md);
 
 	.form-title {
@@ -78,4 +78,15 @@
 	.hidden {
 		display: none;
 	}
+}
+
+.contact-form .form-title,
+.contact-form .form-actions,
+.contact-form .form-status {
+  grid-column: 1 / -1;
+}
+
+/* Le groupe contenant le textarea (message) en pleine largeur */
+.contact-form .form-group:has(textarea) {
+  grid-column: 1 / -1;
 }

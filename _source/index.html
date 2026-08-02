@@ -213,6 +213,24 @@ layout: base.html
       </div>
     </div>
   </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="span-10 start-2">
+      <div class="cta-content">
+        <h2 class="cta-title">{{ homepage.cta.title }}</h2>
+        <p class="cta-subtitle">{{ homepage.cta.subtitle }}</p>
+        <button
+          class="button --primary cta-button"
+          popovertarget="contact-form-popover"
+          aria-haspopup="dialog"
+        >
+          {{ homepage.cta.button_text }}
+        </button>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <popover-menu cal>       
@@ -320,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let intervalId;  // ← stocke l'ID pour pouvoir l'annuler
 
       function updateCarousel() {
-        const slideWidth = slides[0].offsetWidth + 24; // width + gap
+        const slideWidth = slides[0].offsetWidth + 40; // width + gap
         track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 
         navButtons.forEach((btn, index) => {
