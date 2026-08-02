@@ -513,8 +513,12 @@ Homepage Components
 		}
 	}
 }
-
 }
+
+.service-detail-card.service-detail--accompagnement-conseil .service-detail-left h2 {
+    font-size: var(--font-size-xxl);
+}
+
 /* Responsive design for service detail cards */
 @media (max-width: 768px) {
     .service-detail-card {

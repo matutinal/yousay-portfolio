@@ -89,10 +89,10 @@ layout: base.html
       {%- assign matching_testimonials = homepage.testimonials.featured_posts | where: "title", match_title -%}
 
       <div
-        id="service-detail-{{ forloop.index0 }}"
-        class="service-detail-card"
-        data-direction="{{ service.data.animation_direction }}"
-        style="display: none"
+      id="service-detail-{{ forloop.index0 }}"
+      class="service-detail-card service-detail--{{ service.data.slug }}"
+      data-direction="{{ service.data.animation_direction }}"
+      style="display: none"
       >
         <button
           class="service-detail-close"
