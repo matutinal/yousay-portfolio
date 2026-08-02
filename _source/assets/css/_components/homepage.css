@@ -572,6 +572,10 @@ Homepage Components
             height: 40px;
         }
     }
+
+.service-detail-card.service-detail--accompagnement-conseil .service-detail-left h2 {
+    font-size: var(--font-size-xl);
+}
 }
 
 /* Expertise Section */
