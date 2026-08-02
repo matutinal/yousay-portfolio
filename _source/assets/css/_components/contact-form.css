@@ -90,3 +90,10 @@
 .contact-form .form-group:has(textarea) {
   grid-column: 1 / -1;
 }
+
+@media (max-width: 768px) {
+
+.contact-form {
+	display: flex;
+	}
+}
