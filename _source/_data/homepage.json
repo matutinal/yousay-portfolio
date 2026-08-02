@@ -59,7 +59,7 @@
     ]
   },
   "testimonials": {
-    "title": "Témoignages clients",
+    "title": "Organisations accompagnées",
     "featured_posts": [
       {
         "client": "APAJH du Loiret",
@@ -141,25 +141,25 @@
       },
       {
         "client": "OPPELIA",
-        "title": "SIRH",
+        "title": "AUDIT ET CONSEIL",
         "excerpt": "Accompagnement Projet SIRH (GTA)",
         "logo": "/assets/images/uploads/oppelia.png"
       },
       {
         "client": "Sauvegarde de Seine-Saint-Denis",
         "excerpt": "Optimisation SIRH",
-        "title": "SIRH",
+        "title": "AUDIT ET CONSEIL",
         "logo": "/assets/images/uploads/sauvegarde93.png"
       },
       {
         "client": "Sauvegarde des Yvelines",
-        "title": "SIRH",
+        "title": "AUDIT ET CONSEIL",
         "excerpt": "Déploiement Projet SIRH",
         "logo": "/assets/images/uploads/sauvegarde78.png"
       },
       {
         "client": "Société Philanthropique",
-        "title": "SIRH",
+        "title": "AUDIT ET CONSEIL",
         "excerpt": "Optimisation SIRH",
         "logo": "/assets/images/uploads/societe_philanthropique.png"
       },

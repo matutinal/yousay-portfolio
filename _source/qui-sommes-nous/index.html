@@ -307,10 +307,21 @@ layout: base.html
       });
 
       // Auto-advance carousel
-      setInterval(() => {
+      let carouselInterval = setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
       }, 5000);
+
+      carousel.addEventListener("mouseenter", () => {
+        clearInterval(carouselInterval);
+      });
+
+      carousel.addEventListener("mouseleave", () => {
+        carouselInterval = setInterval(() => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          updateCarousel();
+        }, 5000);
+      });
     }
 
     // Service detail card functionality

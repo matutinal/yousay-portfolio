@@ -76,7 +76,7 @@ layout: base.html
         {% endfor %}
       </div>
 
-      <!-- Detailed Service Cards -->
+            <!-- Detailed Service Cards -->
       {% for service in collections.services %}
       <div
         id="service-detail-{{ forloop.index0 }}"
@@ -91,33 +91,58 @@ layout: base.html
         </button>
         <div class="service-detail-content">
           <div class="service-detail-main">
-            <h2 calss="pretty">{{ service.data.title }}</h2>
+            <h2 class="pretty">{{ service.data.title }}</h2>
             <p class="balance">{{ service.data.description }}</p>
           </div>
+
           <div class="service-detail-benefits">
+            <button class="service-detail-cta --primary"
+              popovertarget="contact-form-popover"
+              aria-haspopup="dialog">
+              {{ service.data.cta_text }}
+            </button>
             <h3>{{ service.data.benefits_title }}</h3>
             <ul>
               {% for benefit in service.data.benefits %}
               <li>
-                <strong>♦ {{ benefit.title }} :</strong> {{ benefit.description
-                }}
+                <strong>♦ {{ benefit.title }} :</strong> {{ benefit.description }}
               </li>
               {% endfor %}
             </ul>
             <p>{{ service.data.closing_text }}</p>
           </div>
         </div>
-        <div class="service-detail-footer">
-          <div class="service-detail-testimonials">
-            <h3><a href="#testimonials">{{ service.data.testimonials_title }}</a></h3>
+
+        {%- assign service_name = service.data.title | upcase -%}
+        {%- if service_name == "DRH DE TRANSITION" -%}
+          {%- assign match_title = "DRH DE TRANSITION" -%}
+        {%- elsif service_name == "ACCOMPAGNEMENT ET CONSEIL" -%}
+          {%- assign match_title = "AUDIT ET CONSEIL" -%}
+        {%- else -%}
+          {%- assign match_title = service_name -%}
+        {%- endif -%}
+
+        {%- assign matching_testimonials = homepage.testimonials.featured_posts | where: "title", match_title -%}
+        {%- if matching_testimonials.size > 0 -%}
+        <div class="service-detail-testimonials-section">
+          <h3 class="pretty">Organisations accompagnées</h3>
+          <div class="service-detail-testimonials-scroll">
+            {% for testimonial in matching_testimonials %}
+            <div class="service-detail-testimonial-item">
+              {% if testimonial.logo %}
+              <img
+                src="{{ testimonial.logo }}"
+                alt="{{ testimonial.client }} logo"
+                class="service-detail-testimonial-logo"
+              />
+              {% endif %}
+              <span class="service-detail-testimonial-client">{{ testimonial.client }}</span>
+              <p class="service-detail-testimonial-excerpt">{{ testimonial.excerpt }}</p>
+            </div>
+            {% endfor %}
           </div>
-          <button class="service-detail-cta --primary"
-              popovertarget="contact-form-popover"
-              aria-haspopup="dialog">
-            
-            {{ service.data.cta_text }}
-          </button>
         </div>
+        {%- endif -%}
       </div>
       {% endfor %}
     </div>
@@ -270,13 +295,14 @@ layout: base.html
 <!-- JavaScript for interactive elements -->
 <script>
   // Testimonials carousel functionality
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.getElementById("testimonialsCarousel");
     if (carousel) {
       const track = carousel.querySelector(".testimonials-track");
       const slides = carousel.querySelectorAll(".testimonial-card");
       const navButtons = carousel.querySelectorAll(".testimonial-nav button");
       let currentSlide = 0;
+      let intervalId;  // ← stocke l'ID pour pouvoir l'annuler
 
       function updateCarousel() {
         const slideWidth = slides[0].offsetWidth + 24; // width + gap
@@ -287,6 +313,21 @@ layout: base.html
         });
       }
 
+      function startAutoAdvance() {
+        stopAutoAdvance();  // évite les doublons d'intervalle
+        intervalId = setInterval(() => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          updateCarousel();
+        }, 3000);  // 3 secondes au lieu d'1 seconde
+      }
+
+      function stopAutoAdvance() {
+        if (intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      }
+
       navButtons.forEach((btn, index) => {
         btn.addEventListener("click", () => {
           currentSlide = index;
@@ -294,11 +335,12 @@ layout: base.html
         });
       });
 
-      // Auto-advance carousel
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateCarousel();
-      }, 1000);
+      // Démarrage automatique
+      startAutoAdvance();
+
+      // Pause au survol → reprise quand la souris quitte
+      carousel.addEventListener("mouseenter", stopAutoAdvance);
+      carousel.addEventListener("mouseleave", startAutoAdvance);
     }
 
     // Service detail card functionality
