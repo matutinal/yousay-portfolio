@@ -886,14 +886,68 @@ Homepage Components
 	}
 }
 
-/*Footer */
+/* Footer */
 
 footer {
 	background: var(--secondary);
+}
 
-	p,
-	a {
-		color: var(--color-white);
+.footer-content {
+	text-align: center;
+	color: var(--color-white);
+	padding-block: var(--space-md);
+}
+
+.footer-content a {
+	color: var(--color-white);
+	text-decoration: none;
+}
+
+.footer-content a:hover {
+	text-decoration: underline;
+}
+
+.footer-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--space-sm);
+	flex-wrap: wrap;
+}
+
+.footer-links span,
+.footer-links a {
+	color: var(--color-white);
+}
+
+.footer-icon {
+	display: inline-flex;
+	align-items: center;
+	line-height: 0;
+}
+
+.footer-icon svg {
+	transition: opacity 0.2s;
+}
+
+.footer-icon:hover svg {
+	opacity: 0.8;
+}
+
+.footer-credit {
+	margin-top: var(--space-xs);
+	font-size: var(--font-size-sm);
+	color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+	.footer-links {
+		flex-direction: column;
+		gap: var(--space-xs);
+	}
+
+	.footer-credit {
+		margin-top: var(--space-sm);
 	}
 }
 
