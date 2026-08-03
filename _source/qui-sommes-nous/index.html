@@ -185,6 +185,24 @@ layout: base.html
       </div>
     </div>
   </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="span-10 start-2">
+      <div class="cta-content">
+        <h2 class="cta-title">{{ homepage.cta.title }}</h2>
+        <p class="cta-subtitle">{{ homepage.cta.subtitle }}</p>
+        <button
+          class="button --primary cta-button"
+          popovertarget="contact-form-popover"
+          aria-haspopup="dialog"
+        >
+          {{ homepage.cta.button_text }}
+        </button>
+      </div>
+    </div>
+  </section>
+  
 </main>
 
 <popover-menu>       

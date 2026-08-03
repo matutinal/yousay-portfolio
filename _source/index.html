@@ -121,6 +121,7 @@ layout: base.html
               <button class="service-detail-cta --primary"
                 popovertarget="contact-form-popover"
                 aria-haspopup="dialog">
+                <img src="assets/images/portfolio/send.gif"/>
                 {{ service.data.cta_text }}
               </button>
             </div>
@@ -308,7 +309,7 @@ layout: base.html
       >
     </p>
       <a
-        href="https://linkedin.com/company/yousay-consulting"
+        href="https://fr.linkedin.com/in/youssou-seye-3954a24"
         target="_blank"
         >LinkedIn</a
       >
@@ -347,11 +348,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       function startAutoAdvance() {
-        stopAutoAdvance();  // évite les doublons d'intervalle
+        stopAutoAdvance();
+        // Avance immédiatement d'un slide
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+        // Puis lance l'intervalle normal
         intervalId = setInterval(() => {
-          currentSlide = (currentSlide + 1) % slides.length;
-          updateCarousel();
-        }, 2000);  // 2 secondes
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }, 2000);
       }
 
       function stopAutoAdvance() {
@@ -505,13 +510,13 @@ function showServiceDetail(index) {
       const items    = carousel.querySelectorAll(".testimonial-carousel-item");
       const dotsContainer = carousel.querySelector(".testimonial-carousel-dots");
 
-      if (items.length <= 3) {
+      if (items.length <= 5) {
         dotsContainer.style.display = "none";
         return;
       }
 
       // ---------- dimensions ----------
-      const PER_VIEW = 3;
+      const PER_VIEW = 5;
       const ITEM_H   = 110;          // px, matches CSS height
       viewport.style.height = (PER_VIEW * ITEM_H) + "px";
 
@@ -541,10 +546,13 @@ function showServiceDetail(index) {
 
       carousel.addEventListener("mouseenter", () => clearInterval(interval));
       carousel.addEventListener("mouseleave", () => {
-        interval = setInterval(() => {
+      // Avance immédiatement
+      goToPage((currentPage + 1) % totalPages);
+      // Puis relance l'intervalle
+      interval = setInterval(() => {
           goToPage((currentPage + 1) % totalPages);
-        }, 4000);
-      });
+      }, 4000);
+    });
     });
     });
 </script>

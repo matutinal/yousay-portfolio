@@ -257,7 +257,7 @@ Homepage Components
 
 		&:after {
 			display: inline-block;
-			content: "\00d7"; /* This will render the 'X' */
+			content: "\2923"; /* This will render the 'X' */
 		}
 	}
 
@@ -367,17 +367,34 @@ Homepage Components
 
 	.service-detail-cta-wrapper {
     margin-top: var(--space-lg);
+	margin-left: var(--space-md);
+
+	button {
+			padding: var(--space-xxl) var(--space-xl);
+		}
+
 }
 	.service-detail-cta {
-		color: var(--color-text);
+		color: var(--color-bg);
 		border: 2px solid var(--color-text);
 		padding: var(--space-md) var(--space-lg);
 		font-size: var(--font-size-lg);
 		font-weight: var(--font-weight-lg);
+		background-color: var(--neutral);
 		cursor: pointer;
 		transition: all 0.3s ease;
 		&:hover {
-			color: var(--color-bg);
+			color: var(--neutral);
+			background-color: var(--color-bg);
+		}
+		
+		img{
+		width: 64px;
+		height: 64px;
+		margin-bottom: var(--space-md);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		}
 	}
 
@@ -467,14 +484,14 @@ Homepage Components
 
 .testimonial-carousel-client {
 	font-family: "Century Gothic Bold";
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-md);
 	color: var(--color-text);
 	line-height: var(--line-height-tight);
 	display: block;
 }
 
 .testimonial-carousel-excerpt {
-	font-size: 11px;
+	font-size: var(--font-size-sm);
 	color: var(--color-text-muted);
 	line-height: var(--line-height-tight);
 	margin: 4px 0 0 0;
@@ -578,6 +595,26 @@ Homepage Components
 }
 }
 
+.service-detail-card {
+	.service-detail-cta-wrapper {
+		margin-top: var(--space-md);
+	
+		button {
+			padding: var(--space-xxs) var(--space-sm);
+			font-size: var(--font-size-md);
+		}
+
+		img{
+		width: 64px;
+		height: 64px;
+		margin-bottom: var(--space-md);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+
+	}
+}
 /* Expertise Section */
 .expertise-section {
 	padding: var(--space-sm) 0;
@@ -598,6 +635,8 @@ Homepage Components
 		position: relative;
 	}
 }
+
+
 
 .expertise-card {
 	font-size: var(--font-size-md);
@@ -676,94 +715,43 @@ Homepage Components
    CARD 1 — Front phase: 0% → 40% (6s, visible 3s)
    ---------------------------------------------------------------------------- */
 @keyframes expertise-card-1 {
-    0% {
-        /* center front, z-index: 3 (classe) */
-    }
-    20% {
-        transform: translateX(95px) rotate(15deg);
-    } /* slide out — mi-phase (20 = 40/2) */
-    30% {
-        transform: translateX(-20px);
-        z-index: 1;
-    } /* to back */
-    35% {
-        transform: translateX(-20px);
-        z-index: 1;
-    } /* stay back */
-    40% {
-        transform: translateX(-10px);
-        z-index: 2;
-    } /* to middle */
-    60% {
-        transform: translateX(-10px);
-        z-index: 2;
-    } /* stay middle */
-    100% {
-        transform: translateX(0);
-        z-index: 3;
-    } /* to front */
+    0%   { transform: translateX(0);     z-index: 3; }  /* FRONT — 6s */
+    30%  { transform: translateX(0);     z-index: 3; }  /* tient la position */
+    33%  { transform: translateX(95px) rotate(15deg);
+           z-index: 1; }                                /* ROTATE OUT → BACK (0.67s) */
+    66%  { transform: translateX(-20px); z-index: 1; }  /* BACK */
+    69%  { transform: translateX(-10px); z-index: 2; }  /* → MIDDLE */
+    98%  { transform: translateX(-10px); z-index: 2; }  /* MIDDLE */
+    100% { transform: translateX(0);     z-index: 3; }  /* → FRONT */
 }
+
 
 /* ----------------------------------------------------------------------------
    CARD 2 — Front phase: 40% → 70% (4.5s, visible 2.25s)
    ---------------------------------------------------------------------------- */
 @keyframes expertise-card-2 {
-    0% {
-        /* middle, z-index: 2 (classe) */
-    }
-    20% {
-        transform: translateX(0);
-    }
-    30% {
-        transform: translateX(10px);
-        z-index: 3;
-    } /* to front */
-    35% {
-        transform: translateX(105px) rotate(15deg);
-    } /* slide out — mi-phase (55 = 40 + 30/2) */
-    40% {
-        transform: translateX(-10px);
-        z-index: 1;
-    } /* to back */
-    60% {
-        transform: translateX(-10px);
-        z-index: 1;
-    } /* stay back */
-    100% {
-        transform: translateX(0);
-        z-index: 2;
-    } /* to middle */
+    0%   { transform: translateX(-10px); z-index: 2; }  /* MIDDLE */
+    33%  { transform: translateX(-10px); z-index: 2; }
+    36%  { transform: translateX(0);     z-index: 3; }  /* → FRONT */
+    66%  { transform: translateX(0);     z-index: 3; }  /* FRONT — 6s */
+    69%  { transform: translateX(95px) rotate(15deg);
+           z-index: 1; }                                /* ROTATE OUT → BACK (0.67s) */
+    98%  { transform: translateX(-20px); z-index: 1; }  /* BACK */
+    100% { transform: translateX(-10px); z-index: 2; }  /* → MIDDLE */
 }
 
 /* ----------------------------------------------------------------------------
    CARD 3 — Front phase: 70% → 100% (4.5s, visible 2.25s)
    ---------------------------------------------------------------------------- */
 @keyframes expertise-card-3 {
-    0% {
-        z-index: 1;
-    } /* to back */
-    20% {
-        transform: translateX(0);
-    }
-    30% {
-        transform: translateX(10px);
-        z-index: 2;
-    } /* to middle */
-    35% {
-        transform: translateX(10px);
-        z-index: 2;
-    } /* stay middle */
-    40% {
-        transform: translateX(20px);
-        z-index: 3;
-    } /* to front */
-    60% {
-        transform: translateX(115px) rotate(15deg);
-    } /* slide out — mi-phase (85 = 70 + 30/2) */
-    100% {
-        transform: translateX(0);
-        z-index: 1;
-    } /* to back */
+    0%   { transform: translateX(-20px); z-index: 1; }  /* BACK */
+    33%  { transform: translateX(-20px); z-index: 1; }
+    36%  { transform: translateX(-10px); z-index: 2; }  /* → MIDDLE */
+    66%  { transform: translateX(-10px); z-index: 2; }  /* MIDDLE */
+    69%  { transform: translateX(0);     z-index: 3; }  /* → FRONT */
+    99%  { transform: translateX(0);     z-index: 3; }  /* FRONT — 6s */
+    100% { transform: translateX(95px) rotate(15deg);
+           z-index: 1; }                                /* ROTATE OUT → BACK (0.67s) */
 }
 
 /* Testimonials Section */
