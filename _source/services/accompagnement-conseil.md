@@ -2,10 +2,16 @@
 title: Accompagnement et conseil
 slug: accompagnement-conseil
 order: 2
-description: Vous souhaitez transformer vos organisations et optimiser vos
-  ressources humaines ? En tant que consultant RH spécialisé en accompagnement
-  au changement, je vous aide à développer des stratégies RH efficaces et
+description: >-
+  Vous souhaitez transformer vos organisations et optimiser vos ressources
+  humaines ? Je vous accompagne au déploiement de stratégies RH efficaces et
   durables.
+
+  <br>
+
+  <br>
+
+  Offre de services : Audit, Stratégie et déclinaison opérationnelle, SIRH, Paie, Dialogue social, organisation de service, Fusion Associations...
 benefits_title: Pourquoi choisir mes services ?
 benefits:
   - title: Expertise
