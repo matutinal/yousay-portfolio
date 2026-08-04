@@ -8,6 +8,8 @@ description: >-
   changement, je vous aide à développer des stratégies RH efficaces et
   durables.<br>
 
+  <br>
+
   Offre de services : Stratégie et déclinaison opérationnelle, SIRH, Paie, Dialogue social, Audit organisation de service, Fusion Associations.....
 benefits_title: Pourquoi choisir mes services ?
 benefits:
