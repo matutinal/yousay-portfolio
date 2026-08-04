@@ -502,7 +502,7 @@ Homepage Components
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 
-	:hover {
+	&:hover {
 		overflow:visible;
 	}
 }
