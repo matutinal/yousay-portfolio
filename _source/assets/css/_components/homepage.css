@@ -1029,13 +1029,23 @@ footer {
 
 	.cta-title {
 	font-family: "Century Gothic Bold";
-	font-size: var(--font-size-xl);
-	font-weight: var(--font-weight-xl);
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-md);
 	color: var(--color-white);
 	margin-bottom: var(--space-md);
 	}
 
-	.cta-button button {
+	.cta-subtitle {
+	font-size: var(--font-size-md);
+	color: oklch(from var(--color-white) l c h / 0.85);
+	margin-bottom: var(--space-xl);
+	max-width: 600px;
+	margin-inline: auto;
+	line-height: var(--line-height-relaxed);
+	text-wrap: balance;
+	}
+
+	.cta-button {
 		padding: var(--space-sm)var(--space-md);
 	}
 }
