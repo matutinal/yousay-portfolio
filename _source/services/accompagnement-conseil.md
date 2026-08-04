@@ -5,7 +5,8 @@ order: 2
 description: >-
   Vous souhaitez transformer vos organisations et optimiser vos ressources
   humaines ? En tant que consultant RH spécialisé en accompagnement au
-  changement, je vous aide à développer des stratégies RH efficaces et durables.
+  changement, je vous aide à développer des stratégies RH efficaces et
+  durables.<br>
 
   Offre de services : Stratégie et déclinaison opérationnelle, SIRH, Paie, Dialogue social, Audit organisation de service, Fusion Associations.....
 benefits_title: Pourquoi choisir mes services ?
