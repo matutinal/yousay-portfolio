@@ -1034,4 +1034,8 @@ footer {
 	color: var(--color-white);
 	margin-bottom: var(--space-md);
 	}
+
+	.cta-button button {
+		padding: var(--space-sm)var(--space-md);
+	}
 }
