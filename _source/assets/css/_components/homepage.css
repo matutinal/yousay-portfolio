@@ -501,6 +501,10 @@ Homepage Components
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+
+	:hover {
+		overflow:visible;
+	}
 }
 
 .testimonial-carousel-item:hover .testimonial-carousel-excerpt {
