@@ -4,9 +4,10 @@ slug: accompagnement-conseil
 order: 2
 description: >-
   Vous souhaitez transformer vos organisations et optimiser vos ressources
-  humaines ? En tant que consultant RH spécialisé en accompagnement au
-  changement, je vous aide à développer des stratégies RH efficaces et
-  durables.<br>
+  humaines ? Je vous accompagne au déploiement de stratégies RH efficaces et
+  durables.
+
+  <br>
 
   <br>
 
