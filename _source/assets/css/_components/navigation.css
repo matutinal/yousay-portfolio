@@ -18,6 +18,16 @@ nav {
 	mix-blend-mode: multiply;
 }
 
+nav ul.inline-flex {
+		gap: 12;
+		width: 100%;
+	}
+
+	nav ul.inline-flex li .button {
+		padding-block: var(--space-xs);
+		font-size: var(--font-size-md);
+	}
+
 @media (--sm) {
 	nav {
 		flex-wrap: wrap;
