@@ -493,20 +493,20 @@ function showServiceDetail(index) {
         card.style.transform = 'translateX(0) rotate(0)';
       });
     }
-        // --- Testimonial carousel: 3 items per view ---
+        // --- Testimonial carousel: 4 items per view ---
     document.querySelectorAll(".testimonial-carousel").forEach((carousel) => {
       const viewport = carousel.querySelector(".testimonial-carousel-viewport");
       const track    = carousel.querySelector(".testimonial-carousel-track");
       const items    = carousel.querySelectorAll(".testimonial-carousel-item");
       const dotsContainer = carousel.querySelector(".testimonial-carousel-dots");
 
-      if (items.length <= 5) {
+      if (items.length <= 4) {
         dotsContainer.style.display = "none";
         return;
       }
 
       // ---------- dimensions ----------
-      const PER_VIEW = 5;
+      const PER_VIEW = 4;
       const ITEM_H   = 110;          // px, matches CSS height
       viewport.style.height = (PER_VIEW * ITEM_H) + "px";
 
