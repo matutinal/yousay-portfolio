@@ -11,7 +11,7 @@ description: >-
 
   <br>
 
-  Offre de services : Audit, Stratégie et déclinaison opérationnelle, SIRH, Paie, Dialogue social, organisation de service, Fusion Associations...
+  Offre de services : Audit, Stratégie et déclinaison opérationnelle, SIRH, Paie, Dialogue social, organisation de service, rapprochements, fusions….
 benefits_title: Pourquoi choisir mes services ?
 benefits:
   - title: Expertise
