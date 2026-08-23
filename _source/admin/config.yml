@@ -60,6 +60,16 @@ collections:
               - {label: "Subtitle", name: "subtitle", widget: "text"}
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+          - label: "Chiffres clés"
+            name: "stats"
+            widget: "object"
+            fields:
+              - label: "Statistiques"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Valeur", name: "value", widget: "string", hint: "Ex : 20 ans, 120+, 24"}
+                  - {label: "Libellé", name: "label", widget: "string"}
           - label: "Services Section"
             name: "services"
             widget: "object"
