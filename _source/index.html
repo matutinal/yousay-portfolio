@@ -1,6 +1,6 @@
 ---
 title: Youssou SEYE Consultant et Coach
-description: "{{ site.description }}"
+description: "YOUSAY Consulting, spécialiste RH de l'économie sociale et solidaire : DRH de transition, conseil, coaching et formation pour les associations et l'ESS."
 layout: base.html
 ---
 
@@ -42,6 +42,16 @@ layout: base.html
         <div class="hero-text">
           <h1 class="hero-slogan">{{ homepage.hero.slogan }}</h1>
           <h2 class="hero-subtitle">{{ homepage.hero.subtitle }}</h2>
+          <div class="hero-actions">
+            <button
+              class="button --primary"
+              popovertarget="contact-form-popover"
+              aria-haspopup="dialog"
+            >
+              Discutons de votre projet
+            </button>
+            <a href="#services" class="button --simple">Découvrir notre offre</a>
+          </div>
         </div>
         <div class="hero-image">
           <img
@@ -50,6 +60,14 @@ layout: base.html
           />
         </div>
       </div>
+      <ul class="hero-stats unlisted">
+        {% for stat in homepage.stats.items %}
+        <li class="hero-stat">
+          <span class="hero-stat-value">{{ stat.value }}</span>
+          <span class="hero-stat-label">{{ stat.label }}</span>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </section>
 
@@ -121,7 +139,7 @@ layout: base.html
               <button class="service-detail-cta --primary"
                 popovertarget="contact-form-popover"
                 aria-haspopup="dialog">
-                <img src="assets/images/portfolio/send.gif"/>
+                <svg class="service-detail-cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 {{ service.data.cta_text }}
               </button>
             </div>
@@ -235,7 +253,7 @@ layout: base.html
 </main>
 
 <popover-menu cal>       
-  <div 
+  <contact-form 
     id="contact-form-popover" 
     popover="auto"
     class="contact-form-popover"
@@ -295,7 +313,7 @@ layout: base.html
       
       <div class="form-status hidden" id="form-status"></div>
     </form>
-  </div>
+  </contact-form>
   </popover-menu>
 
 <footer>
@@ -315,234 +333,3 @@ layout: base.html
     </p>
   </div>
 </footer>
-
-<!-- JavaScript for interactive elements -->
-<script>
-  // Testimonials carousel functionality
-document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.getElementById("testimonialsCarousel");
-    if (carousel) {
-      const track = carousel.querySelector(".testimonials-track");
-      const slides = carousel.querySelectorAll(".testimonial-card");
-      const navButtons = carousel.querySelectorAll(".testimonial-nav button");
-      let currentSlide = 0;
-      let intervalId;  // ← stocke l'ID pour pouvoir l'annuler
-
-      function updateCarousel() {
-        const slideWidth = slides[0].offsetWidth + 40; // width + gap
-        track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-
-        navButtons.forEach((btn, index) => {
-          btn.classList.toggle("active", index === currentSlide);
-        });
-      }
-
-      function startAutoAdvance() {
-        stopAutoAdvance();
-        // Avance immédiatement d'un slide
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateCarousel();
-        // Puis lance l'intervalle normal
-        intervalId = setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
-        }, 2000);
-      }
-
-      function stopAutoAdvance() {
-        if (intervalId) {
-          clearInterval(intervalId);
-          intervalId = null;
-        }
-      }
-
-      navButtons.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          currentSlide = index;
-          updateCarousel();
-        });
-      });
-
-      // Démarrage automatique
-      startAutoAdvance();
-
-      // Pause au survol → reprise quand la souris quitte
-      carousel.addEventListener("mouseenter", stopAutoAdvance);
-      carousel.addEventListener("mouseleave", startAutoAdvance);
-    }
-
-    // Service detail card functionality
-    const serviceCards = document.querySelectorAll(".service-card");
-    const serviceDetailCards = document.querySelectorAll(
-      ".service-detail-card"
-    );
-
-    // Function to show service detail card
-    function showServiceDetail(index) {
-      const detailCard = document.getElementById(`service-detail-${index}`);
-      if (detailCard) {
-        detailCard.style.display = "flex";
-        detailCard.getBoundingClientRect(); // <-- forces the browser to compute the "before" state
-        detailCard.classList.add("active");
-        // Function to show service detail card
-function showServiceDetail(index) {
-  const detailCard = document.getElementById(`service-detail-${index}`);
-  if (detailCard) {
-    detailCard.style.display = "flex";
-    detailCard.getBoundingClientRect();
-    detailCard.classList.add("active");
-
-    // 🔧 Initialize carousel once the card is visible
-    const carousel = detailCard.querySelector(".detail-carousel");
-    if (carousel) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          initDetailCarousel(carousel);
-        });
-      });
-        }
-      }
-    }
-      }
-    }
-
-    // Function to hide service detail card
-    function hideServiceDetail(index) {
-      const detailCard = document.getElementById(`service-detail-${index}`);
-      if (detailCard) {
-        detailCard.classList.remove("active");
-        // Hide after animation completes
-        setTimeout(() => {
-          detailCard.style.display = "none";
-        }, 400);
-      }
-    }
-
-    // Add click handlers for service cards
-    serviceCards.forEach((card) => {
-      card.addEventListener("click", function () {
-        const serviceIndex = this.dataset.service;
-        showServiceDetail(serviceIndex);
-      });
-    });
-
-    // Add click handlers for close buttons
-    document.querySelectorAll(".service-detail-close").forEach((button) => {
-      button.addEventListener("click", function () {
-        const cardId = this.dataset.close;
-        const index = cardId.split("-").pop();
-        hideServiceDetail(index);
-      });
-    });
-    // Add click handlers for testimonials anchors
-    document.querySelectorAll('.service-detail-testimonials a').forEach((anchor) => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent default anchor behavior
-      
-      // Find the parent service detail card
-      const detailCard = this.closest('.service-detail-card');
-      if (detailCard) {
-        const index = detailCard.id.split('-').pop();
-        hideServiceDetail(index);
-        
-        // Optionally scroll to testimonials section after closing
-        const testimonialsSection = document.getElementById('testimonials');
-        if (testimonialsSection) {
-          setTimeout(() => {
-            testimonialsSection.scrollIntoView({ behavior: 'smooth' });
-          }, 450); // Wait for close animation to complete
-          }
-        }
-    });
-    });
-    
-    // // Add click handler for CTA buttons
-    // serviceDetailCards.forEach((card) => {
-    //   const ctaButton = card.querySelector(".service-detail-cta");
-    //   if (ctaButton) {
-    //     ctaButton.addEventListener("click", function () {
-    //       // Redirect to contact section or open email client
-    //       window.location.href =
-    //         "mailto:contact@yousay-consulting.fr?subject=Demande de renseignements";
-    //     });
-    //   }
-    // });
-
-    // Close any visible detail card when clicking outside it
-    document.addEventListener("click", function (e) {
-      serviceDetailCards.forEach((card) => {
-        // Only check cards that are currently visible
-        if (card.style.display !== "none" && !card.contains(e.target)) {
-          // Don't close if the click was on a service-card "En savoir plus" button
-          // (otherwise opening and closing would conflict)
-          if (!e.target.closest(".service-card")) {
-            const index = card.id.split("-").pop();
-            hideServiceDetail(index);
-          }
-        }
-      });
-    });
-
-    // Expertise card animation fallback for reduced motion preference
-    const expertiseCards = document.querySelectorAll('.expertise-card');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-      expertiseCards.forEach(card => {
-        card.style.animation = 'none';
-        card.style.transform = 'translateX(0) rotate(0)';
-      });
-    }
-        // --- Testimonial carousel: 4 items per view ---
-    document.querySelectorAll(".testimonial-carousel").forEach((carousel) => {
-      const viewport = carousel.querySelector(".testimonial-carousel-viewport");
-      const track    = carousel.querySelector(".testimonial-carousel-track");
-      const items    = carousel.querySelectorAll(".testimonial-carousel-item");
-      const dotsContainer = carousel.querySelector(".testimonial-carousel-dots");
-
-      if (items.length <= 4) {
-        dotsContainer.style.display = "none";
-        return;
-      }
-
-      // ---------- dimensions ----------
-      const PER_VIEW = 4;
-      const ITEM_H   = 110;          // px, matches CSS height
-      viewport.style.height = (PER_VIEW * ITEM_H) + "px";
-
-      const totalPages = Math.ceil(items.length / PER_VIEW);
-      let currentPage = 0;
-
-      // ---------- dot buttons ----------
-      for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement("button");
-        if (i === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => goToPage(i));
-        dotsContainer.appendChild(dot);
-      }
-      const dots = dotsContainer.querySelectorAll("button");
-
-      // ---------- page navigation ----------
-      function goToPage(page) {
-        currentPage = page;
-        track.style.transform = `translateY(-${currentPage * PER_VIEW * ITEM_H}px)`;
-        dots.forEach((d, i) => d.classList.toggle("active", i === currentPage));
-      }
-
-      // ---------- auto-advance ----------
-      let interval = setInterval(() => {
-        goToPage((currentPage + 1) % totalPages);
-      }, 4000);
-
-      carousel.addEventListener("mouseenter", () => clearInterval(interval));
-      carousel.addEventListener("mouseleave", () => {
-      // Avance immédiatement
-      goToPage((currentPage + 1) % totalPages);
-      // Puis relance l'intervalle
-      interval = setInterval(() => {
-          goToPage((currentPage + 1) % totalPages);
-      }, 4000);
-    });
-    });
-    });
-</script>

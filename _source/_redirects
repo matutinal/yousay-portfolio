@@ -1,6 +1,7 @@
 # Netlify redirects file
-# Redirect /admin to /admin/ for CMS
-/admin /admin/ 301
+
+# Blog désactivé : renvoi vers l'accueil
+/blog/* / 301
 
 # Fallback for SPA-like behavior (if needed)
 # /app/* /index.html 200

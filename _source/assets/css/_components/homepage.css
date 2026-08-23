@@ -27,6 +27,13 @@ Homepage Components
 			line-height: var(--line-height-lg);
 			color: var(--color-text);
 		}
+
+		.hero-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--space-md);
+			margin-top: var(--space-lg);
+		}
 	}
 
 	.hero-image {
@@ -49,6 +56,35 @@ Homepage Components
 			background-image: url(../images/portfolio/strike.svg);
 			background-repeat: no-repeat;
 			z-index: 2;
+		}
+	}
+
+	.hero-stats {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--space-md);
+		margin-top: var(--space-xxl);
+
+		.hero-stat {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-xs);
+			padding: var(--space-md);
+			border-radius: var(--border-radius-lg);
+			background: oklch(from var(--primary) var(--200));
+
+			.hero-stat-value {
+				font-size: var(--font-size-xl);
+				font-weight: var(--font-weight-xl);
+				color: oklch(from var(--secondary) var(--500));
+				line-height: var(--line-height-flush);
+			}
+
+			.hero-stat-label {
+				font-size: var(--font-size-sm);
+				line-height: var(--line-height-md);
+				color: oklch(from var(--secondary) var(--500));
+			}
 		}
 	}
 }
@@ -396,6 +432,13 @@ Homepage Components
 		align-items: center;
 		justify-content: center;
 		}
+
+		svg.service-detail-cta-icon {
+			width: 24px;
+			height: 24px;
+			margin-bottom: 0;
+			flex-shrink: 0;
+		}
 	}
 
 	.service-detail-testimonials {
@@ -420,15 +463,27 @@ Homepage Components
 }
 
 /* Wrapper avec overflow */
-/* --- Colonne droite : carrousel 3 items verticaux --- */
+/* --- Colonne droite : liste de références, hauteur plafonnée --- */
 .testimonial-carousel {
 	position: relative;
 }
 
 .testimonial-carousel-viewport {
-	overflow: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: calc(4 * 110px);
 	border-radius: var(--border-radius-md);
-	/* height débrayée par JS à 3 × 110px */
+	scrollbar-width: thin;
+	scrollbar-color: oklch(from var(--primary) var(--300)) transparent;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: oklch(from var(--primary) var(--300));
+		border-radius: 3px;
+	}
 }
 
 .testimonial-carousel-track {
@@ -518,6 +573,10 @@ Homepage Components
 	gap: var(--space-xs);
 	margin-top: var(--space-md);
 
+	&:empty {
+		display: none;
+	}
+
 	button {
 		width: 8px;
 		height: 8px;
@@ -580,6 +639,11 @@ Homepage Components
         .detail-carousel-viewport {
             overflow-x: auto;
             overflow-y: hidden;
+        }
+
+        .testimonial-carousel-viewport {
+            max-height: none;
+            overflow-y: visible;
         }
 
         .service-detail-left h2 {
@@ -960,6 +1024,15 @@ footer {
 	.hero-section .hero-content {
 		grid-template-columns: 1fr;
 		text-align: center;
+	}
+
+	.hero-section .hero-actions {
+		justify-content: center;
+	}
+
+	.hero-section .hero-stats {
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-sm);
 	}
 
 	.services-grid {

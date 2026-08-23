@@ -92,8 +92,35 @@
 }
 
 @media (max-width: 768px) {
+	.contact-form-popover {
+		inline-size: 100vw;
+		max-inline-size: 100vw;
+		max-block-size: 100dvh;
+		overflow-y: auto;
+		padding: var(--space-md);
+	}
 
-.contact-form {
-	display: flex;
+	.contact-form {
+		display: block;
+	}
+
+	.contact-form .form-group + .form-group {
+		margin-block-start: var(--space-md);
+	}
+
+	.contact-form .form-group input,
+	.contact-form .form-group select,
+	.contact-form .form-group textarea {
+		inline-size: 100%;
+		min-inline-size: 0;
+	}
+
+	.contact-form .form-actions {
+		flex-wrap: wrap;
+	}
+
+	.contact-form .form-actions button {
+		flex: 1 1 auto;
+		min-inline-size: 0;
 	}
 }

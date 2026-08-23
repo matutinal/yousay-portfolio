@@ -1,9 +1,17 @@
 {
   "hero": {
-    "slogan": "Un objectif partagé :",
+    "slogan": "Spécialiste RH de l'économie sociale et solidaire",
     "subtitle": "Améliorer la <mark> performance RH   </mark> et managériale de votre organisation",
     "image": "/assets/images/uploads/ys.jpeg",
     "image_alt": "Youssou SEYE Consultant"
+  },
+  "stats": {
+    "items": [
+      { "value": "20 ans", "label": "d'expérience en direction RH" },
+      { "value": "16 mois", "label": "de DRH de transition chez ISM Interprétariat" },
+      { "value": "120+", "label": "personnes formées au droit social" },
+      { "value": "24", "label": "organisations de l'ESS accompagnées" }
+    ]
   },
   "services": {
     "title": "Notre offre",
@@ -24,7 +32,7 @@
       },
       {
         "title": "Coaching",
-        "description": "Vous souhaitez un accompagnement autour d’objectifs personnels ou professionnels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équopes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
+        "description": "Vous souhaitez un accompagnement autour d’objectifs personnels ou professionnels ? Coach certifié, j’accompagne les dirigeants, les collaborateurs, les équipes et les organisations dans leur développement et dans l’aide à l’expression de leur potentiel (individuel ou collectif).",
         "icon": "coaching",
         "color": "dark-blue",
         "details": "Detailed description of coaching services..."

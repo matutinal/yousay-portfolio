@@ -52,6 +52,7 @@ export default async function (eleventyConfig) {
   Files & folders
   -------------------------------------------------------------------------- */
   eleventyConfig.ignores.add('.DS_Store');
+  eleventyConfig.ignores.add('_source/blog/**');
   eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
   eleventyConfig.addPassthroughCopy('_source/assets/fonts');
   eleventyConfig.addPassthroughCopy('_source/assets/images');
