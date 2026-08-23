@@ -44,19 +44,7 @@ export default class ContactForm extends HTMLElement {
 			});
 
 			if (response.ok) {
-				this.showStatus(
-					'Message envoyé avec succès ! Nous vous répondrons rapidement.',
-					'success',
-				);
-				this.form.reset();
-
-				// Close popover after successful submission
-				setTimeout(() => {
-					const popover = this.closest('[popover]');
-					if (popover) {
-						popover.hidePopover();
-					}
-				}, 2000);
+				window.location.assign('/merci/');
 			} else {
 				throw new Error('Form submission failed');
 			}
