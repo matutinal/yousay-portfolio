@@ -101,6 +101,25 @@ Homepage Components
 	}
 }
 
+/* ----------------------------------------------------------------------------
+Hero — animation du stabylo (balayage gauche → droite)
+L'apparence du mark reste celle définie globalement dans decorations.css.
+--------------------------------------------------------------------------- */
+.hero-subtitle mark {
+	background-repeat: no-repeat;
+}
+
+@media (--motion) {
+	.hero-subtitle mark {
+		animation: mark-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+	}
+}
+
+@keyframes mark-reveal {
+	from { background-size: 0% 100%; }
+	to   { background-size: 100% 100%; }
+}
+
 /* Services Section */
 .services-section {
 	padding: 0 0 var(--space-lg) 0;
