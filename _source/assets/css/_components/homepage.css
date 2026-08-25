@@ -939,7 +939,7 @@ L'apparence du mark reste celle définie globalement dans decorations.css.
 
 /* CTA Section */
 .cta-section {
-	padding: var(--space-xxl) 0;
+	padding: var(--space-xl) 0;
 	text-align: center;
 }
 
@@ -950,7 +950,7 @@ L'apparence du mark reste celle définie globalement dans decorations.css.
 		var(--secondary)
 	);
 	border-radius: var(--border-radius-lg);
-	padding: var(--space-xxl) var(--space-xl);
+	padding: var(--space-xl) var(--space-xl);
 }
 
 .cta-title {
