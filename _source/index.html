@@ -62,9 +62,17 @@ layout: base.html
       </div>
       <ul class="hero-stats unlisted">
         {% for stat in homepage.stats.items %}
-        <li class="hero-stat">
-          <span class="hero-stat-value">{{ stat.value }}</span>
-          <span class="hero-stat-label">{{ stat.label }}</span>
+        <li>
+          {%- if stat.link_type == "service" -%}
+          <a class="hero-stat" href="#services" data-service="{{ stat.link_target }}">
+          {%- elsif stat.link_type == "section" -%}
+          <a class="hero-stat" href="#{{ stat.link_target }}">
+          {%- else -%}
+          <a class="hero-stat" href="{{ stat.link_target }}">
+          {%- endif -%}
+            <span class="hero-stat-value">{{ stat.value }}</span>
+            <span class="hero-stat-label">{{ stat.label }}</span>
+          </a>
         </li>
         {% endfor %}
       </ul>

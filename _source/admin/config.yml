@@ -70,6 +70,14 @@ collections:
                 fields:
                   - {label: "Valeur", name: "value", widget: "string", hint: "Ex : 20 ans, 120+, 24"}
                   - {label: "Libellé", name: "label", widget: "string"}
+                  - label: "Type de lien"
+                    name: "link_type"
+                    widget: "select"
+                    options:
+                      - {label: "Page du site", value: "page", hint: "Ouvre une page (ex : /qui-sommes-nous/)"}
+                      - {label: "Détail d'un service", value: "service", hint: "Ouvre la carte détaillée du service"}
+                      - {label: "Section de la page", value: "section", hint: "Fait défiler vers une section"}
+                  - {label: "Cible", name: "link_target", widget: "string", hint: "Page : URL (ex : /qui-sommes-nous/) — Service : numéro d'ordre (0=DRH, 1=Conseil, 2=Coaching, 3=Formation) — Section : identifiant (ex : testimonials)"}
           - label: "Services Section"
             name: "services"
             widget: "object"

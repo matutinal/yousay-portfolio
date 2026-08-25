@@ -65,6 +65,10 @@ Homepage Components
 		gap: var(--space-md);
 		margin-top: var(--space-xxl);
 
+		li {
+			display: contents;
+		}
+
 		.hero-stat {
 			display: flex;
 			flex-direction: column;
@@ -72,6 +76,14 @@ Homepage Components
 			padding: var(--space-md);
 			border-radius: var(--border-radius-lg);
 			background: oklch(from var(--primary) var(--200));
+			text-decoration: none;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+
+			&:hover {
+				transform: translateY(-4px);
+				box-shadow: var(--shadow-lg);
+			}
 
 			.hero-stat-value {
 				font-size: var(--font-size-xl);

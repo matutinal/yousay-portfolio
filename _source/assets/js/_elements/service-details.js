@@ -81,6 +81,18 @@ export default function initServiceDetails() {
 		});
 	}
 
+	// Hero stats pointing to a service detail open it
+	for (const stat of document.querySelectorAll('.hero-stat[data-service]')) {
+		stat.addEventListener('click', function (e) {
+			e.preventDefault();
+			const servicesSection = document.getElementById('services');
+			if (servicesSection) {
+				servicesSection.scrollIntoView({ behavior: 'smooth' });
+			}
+			showServiceDetail(this.dataset.service);
+		});
+	}
+
 	// Close buttons
 	for (const button of document.querySelectorAll('.service-detail-close')) {
 		button.addEventListener('click', function () {
@@ -111,7 +123,7 @@ export default function initServiceDetails() {
 	document.addEventListener('click', (e) => {
 		for (const card of document.querySelectorAll('.service-detail-card')) {
 			if (card.style.display !== 'none' && !card.contains(e.target)) {
-				if (!e.target.closest('.service-card')) {
+				if (!e.target.closest('.service-card, .hero-stat')) {
 					hideServiceDetail(card.id.split('-').pop());
 				}
 			}

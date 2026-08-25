@@ -7,10 +7,30 @@
   },
   "stats": {
     "items": [
-      { "value": "20 ans", "label": "d'expérience en direction RH" },
-      { "value": "16 mois", "label": "de DRH de transition chez ISM Interprétariat" },
-      { "value": "120+", "label": "personnes formées au droit social" },
-      { "value": "24", "label": "organisations de l'ESS accompagnées" }
+      {
+        "value": "20 ans",
+        "label": "d'expérience en direction RH",
+        "link_type": "page",
+        "link_target": "/qui-sommes-nous/"
+      },
+      {
+        "value": "16 mois",
+        "label": "de DRH de transition chez ISM Interprétariat",
+        "link_type": "service",
+        "link_target": "0"
+      },
+      {
+        "value": "120+",
+        "label": "personnes formées au droit social",
+        "link_type": "service",
+        "link_target": "3"
+      },
+      {
+        "value": "24",
+        "label": "organisations de l'ESS accompagnées",
+        "link_type": "section",
+        "link_target": "testimonials"
+      }
     ]
   },
   "services": {
