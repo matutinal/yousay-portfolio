@@ -14,26 +14,26 @@
         "link_target": "/qui-sommes-nous/"
       },
       {
-        "value": "+25",
-        "label": "entreprises de l'ESS accompagnées",
+        "value": "+25 entreprises",
+        "label": " de l'ESS accompagnées",
         "link_type": "section",
         "link_target": "testimonials"
       },
       {
         "value": "+ 22 mois",
-        "label": "de DRH de transition ",
+        "label": "de Direction RH de transition ",
         "link_type": "service",
         "link_target": "0"
       },
       {
-        "value": "+350",
-        "label": "heures de coaching (indnviduel ou collectif)",
+        "value": "+ 350 heures ",
+        "label": "de coaching (indnviduel ou collectif)",
         "link_type": "section",
         "link_target": "2"
       },
       {
-        "value": "+150",
-        "label": "collborateurs formés sur des thématiques RH",
+        "value": "+ 150 collborateurs",
+        "label": "formés sur des thématiques RH",
         "link_type": "service",
         "link_target": "3"
       }
