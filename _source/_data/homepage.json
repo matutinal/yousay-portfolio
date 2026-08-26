@@ -20,13 +20,13 @@
         "link_target": "0"
       },
       {
-        "value": "150+",
+        "value": "+150",
         "label": "personnes formées sur des thématiques RH",
         "link_type": "service",
         "link_target": "3"
       },
       {
-        "value": "20+",
+        "value": "une vingtaine",
         "label": "entreprises de l'ESS accompagnées",
         "link_type": "section",
         "link_target": "testimonials"
