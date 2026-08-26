@@ -30,6 +30,12 @@
         "label": "entreprises de l'ESS accompagnées",
         "link_type": "section",
         "link_target": "testimonials"
+      },
+      {
+        "value": "+350",
+        "label": "heures de coaching (indnviduel ou collectif)",
+        "link_type": "section",
+        "link_target": "2"
       }
     ]
   },
