@@ -54,10 +54,7 @@ layout: base.html
           </div>
         </div>
         <div class="hero-image">
-          <img
-            src="{{ homepage.hero.image }}"
-            alt="{{ homepage.hero.image_alt }}"
-          />
+          {% image homepage.hero.image, homepage.hero.image_alt, "hero-photo", "(max-width: 768px) 100vw, 300px" %}
         </div>
       </div>
       <ul class="hero-stats unlisted">

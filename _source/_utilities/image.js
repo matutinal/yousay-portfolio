@@ -1,34 +1,38 @@
 /* ----------------------------------------------------------------------------
-creates a responsive <img>
+creates a responsive <picture> with multiple formats and resolutions
 ---------------------------------------------------------------------------- */
-import eleventyImage, { eleventyImagePlugin } from '@11ty/eleventy-img';
+import eleventyImage from '@11ty/eleventy-img';
 
 export default async function image(
 	src,
 	alt,
 	cssClass = null,
-	sizes = '90vw',
+	sizes = '100vw',
 	loadingAttr = 'lazy',
 ) {
-	const filePath = `_source/assets/images/${src}`;
-	const metadata = await eleventyImage(filePath, {
-		widths: [500, 1000, 1500, 2000, 2500, 3000],
-		formats: ['webp'],
+	const cleanSrc = String(src)
+		.replace(/^\/?assets\/images\//, '')
+		.replace(/^\//, '');
+
+	const metadata = await eleventyImage(`_source/assets/images/${cleanSrc}`, {
+		widths: [300, 600, 900, 1200],
+		formats: ['webp', 'jpeg'],
 		urlPath: '/assets/images/',
 		outputDir: './_public/assets/images/',
-		sharpWebpOptions: { quality: 40 },
+		sharpWebpOptions: { quality: 70 },
+		sharpJpegOptions: { quality: 78 },
 	});
-	const format = metadata[Object.keys(metadata)[0]];
-	const data = format[format.length - 1];
 
-	return `<img
-    ${cssClass != null ? `class="${cssClass}"` : ''}
-    src="${data.url}"
-    width="${data.width}"
-    height="${data.height}"
-    alt="${alt}"
-    loading="${loadingAttr}"
-    decoding="async"
-    sizes="(max-width: 44.9em) ${sizes}"
-    srcset="${Object.values(metadata).map((imageFormat) => imageFormat.map((entry) => entry.srcset).join(', '))}">`;
+	const attributes = {
+		alt,
+		sizes,
+		loading: loadingAttr,
+		decoding: 'async',
+	};
+
+	if (cssClass) {
+		attributes.class = cssClass;
+	}
+
+	return eleventyImage.generateHTML(metadata, attributes);
 }
