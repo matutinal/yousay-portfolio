@@ -1,8 +1,8 @@
 {
   "hero": {
-    "slogan": "Spécialiste RH de l'économie sociale et solidaire",
+    "slogan": "Notre ambition :",
     "subtitle": "Améliorer la <mark>   performance RH   </mark> et managériale de votre organisation",
-    "image": "/assets/images/uploads/ys.jpeg",
+    "image": "/assets/images/uploads/photo-profil-site.jpg",
     "image_alt": "Youssou SEYE Consultant"
   },
   "stats": {
@@ -14,22 +14,28 @@
         "link_target": "/qui-sommes-nous/"
       },
       {
-        "value": "16 mois",
-        "label": "de DRH de transition chez ISM Interprétariat",
+        "value": "+25 entreprises",
+        "label": "accompagnées sur des thématiques stratégiques ou opérationnelles",
+        "link_type": "section",
+        "link_target": "testimonials"
+      },
+      {
+        "value": "+ 22 mois",
+        "label": "de Direction RH de transition ",
         "link_type": "service",
         "link_target": "0"
       },
       {
-        "value": "120+",
-        "label": "personnes formées au droit social",
-        "link_type": "service",
-        "link_target": "3"
+        "value": "+ 350 heures ",
+        "label": "de coaching (indnviduel ou collectif)",
+        "link_type": "section",
+        "link_target": "2"
       },
       {
-        "value": "24",
-        "label": "organisations de l'ESS accompagnées",
-        "link_type": "section",
-        "link_target": "testimonials"
+        "value": "+ 150 collaborateurs",
+        "label": "formés sur des thématiques RH",
+        "link_type": "service",
+        "link_target": "3"
       }
     ]
   },
