@@ -36,6 +36,24 @@
     <link rel="canonical" href="{{ env.baseUrl }}{{ page.url }}">
     {%- endif -%}
 
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="{{ site.seo.og_type | default: 'website' }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta property="og:title" content="{% if site.seo.og_title %}{{ site.seo.og_title | escape }}{% else %}{{ title | default: site.title | escape }}{% endif %}">
+    <meta property="og:description" content="{% if site.seo.og_description %}{{ site.seo.og_description | strip_html | strip_newlines | truncate: 300 }}{% elsif description %}{{ description | strip_html | strip_newlines | truncate: 300 }}{% else %}{{ site.description | strip_html | strip_newlines | truncate: 300 }}{% endif %}">
+    <meta property="og:url" content="{{ env.baseUrl }}{{ page.url }}">
+    {%- if site.seo.og_image -%}
+    <meta property="og:image" content="{{ site.seo.og_image | prepend: site.url }}">
+    <meta property="og:image:alt" content="{{ site.title | escape }}">
+    {%- endif -%}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if site.seo.og_title %}{{ site.seo.og_title | escape }}{% else %}{{ title | default: site.title | escape }}{% endif %}">
+    <meta name="twitter:description" content="{% if site.seo.og_description %}{{ site.seo.og_description | strip_html | strip_newlines | truncate: 300 }}{% elsif description %}{{ description | strip_html | strip_newlines | truncate: 300 }}{% else %}{{ site.description | strip_html | strip_newlines | truncate: 300 }}{% endif %}">
+    {%- if site.seo.og_image -%}
+    <meta name="twitter:image" content="{{ site.seo.og_image | prepend: site.url }}">
+    {%- endif -%}
+
     <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
     <link rel="mask-icon" href="/assets/images/icons/favicon.svg" color="#000000">

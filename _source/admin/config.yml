@@ -160,6 +160,14 @@ collections:
         file: "_source/_data/site.json"
         fields:
           - {label: "Site Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Description", name: "description", widget: "text", hint: "Description affichée dans les moteurs de recherche (meta description)."}
           - {label: "Author", name: "author", widget: "string"}
           - {label: "URL", name: "url", widget: "string"}
+          - label: "SEO & Réseaux sociaux"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Type de contenu", name: "og_type", widget: "select", default: "website", options: ["website", "article"]}
+              - {label: "Titre de partage", name: "og_title", widget: "string", required: false, hint: "Titre affiché lors d'un partage (Facebook, LinkedIn, X…). Laissez vide pour utiliser le titre de la page."}
+              - {label: "Description de partage", name: "og_description", widget: "text", required: false, hint: "Description affichée lors d'un partage. Laissez vide pour utiliser la description de la page."}
+              - {label: "Image de partage", name: "og_image", widget: "image", required: false, hint: "Image affichée lors d'un partage sur les réseaux sociaux (1200×630 px recommandé)."}

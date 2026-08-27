@@ -3,5 +3,11 @@
   "description": "YOUSAY Consulting accompagne vos projets de transformations",
   "author": "Youssou SEYE",
   "url": "https://yousay-consulting.fr",
-  "logo": "/assets/images/portfolio/logo-yousay-consulting.png"
+  "logo": "/assets/images/portfolio/logo-yousay-consulting.png",
+  "seo": {
+    "og_type": "website",
+    "og_title": "YOUSAY Consulting — Conseil RH, Coaching et Formation pour l'ESS",
+    "og_description": "YOUSAY Consulting accompagne vos projets de transformations RH : DRH de transition, conseil, coaching et formation pour les associations et l'ESS.",
+    "og_image": "/assets/images/portfolio/logo-yousay-consulting.png"
+  }
 }
