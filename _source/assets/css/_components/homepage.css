@@ -61,7 +61,7 @@ Homepage Components
 
 	.hero-stats {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(6, 1fr);
 		gap: var(--space-md);
 		margin-top: var(--space-xxl);
 
@@ -70,6 +70,7 @@ Homepage Components
 		}
 
 		.hero-stat {
+			grid-column: span 2;
 			display: flex;
 			flex-direction: column;
 			gap: var(--space-xs);
@@ -97,6 +98,30 @@ Homepage Components
 				line-height: var(--line-height-md);
 				color: oklch(from var(--secondary) var(--500));
 			}
+		}
+
+		/* 3 puis 2, centrées */
+		li:nth-child(4) .hero-stat,
+		li:nth-child(5) .hero-stat {
+			grid-column: span 3;
+		}
+	}
+}
+
+/* Stats — tablette : 2 puis 2 puis 1, centrées */
+@media (max-width: 1024px) {
+	.hero-section .hero-stats {
+		grid-template-columns: repeat(4, 1fr);
+
+		li:nth-child(1) .hero-stat,
+		li:nth-child(2) .hero-stat,
+		li:nth-child(3) .hero-stat,
+		li:nth-child(4) .hero-stat {
+			grid-column: span 2;
+		}
+
+		li:nth-child(5) .hero-stat {
+			grid-column: span 4;
 		}
 	}
 }
@@ -1062,7 +1087,7 @@ footer {
 	}
 
 	.hero-section .hero-stats {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		gap: var(--space-sm);
 	}
 
