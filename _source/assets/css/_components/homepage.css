@@ -102,9 +102,12 @@ Homepage Components
 		}
 
 		/* 3 puis 2, centrées */
-		li:nth-child(4) .hero-stat,
+		li:nth-child(4) .hero-stat {
+			grid-column: 2 / span 2;
+		}
+
 		li:nth-child(5) .hero-stat {
-			grid-column: span 3;
+			grid-column: 4 / span 2;
 		}
 	}
 }
@@ -1083,6 +1086,11 @@ footer {
 		text-align: center;
 	}
 
+	.hero-section .hero-image img {
+		height: auto;
+		aspect-ratio: 864 / 1208;
+	}
+
 	.hero-section .hero-actions {
 		justify-content: center;
 	}
@@ -1090,6 +1098,10 @@ footer {
 	.hero-section .hero-stats {
 		grid-template-columns: 1fr;
 		gap: var(--space-sm);
+
+		li:nth-child(n) .hero-stat {
+			grid-column: auto;
+		}
 	}
 
 	.services-grid {
