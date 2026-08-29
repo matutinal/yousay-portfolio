@@ -38,6 +38,7 @@
 			width: 25dvh;
 			height: 25dvh;
 			object-fit: cover;
+			object-position: center top;
 			border-radius: var(--border-radius-lg);
 		}
 
@@ -53,6 +54,13 @@
 			background-repeat: no-repeat;
 			z-index: 2;
 		}
+	}
+}
+
+@media (max-width: 768px) {
+	.hero-section-qsn .hero-image img {
+		height: auto;
+		aspect-ratio: 864 / 1208;
 	}
 }
 

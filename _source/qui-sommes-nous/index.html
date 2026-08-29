@@ -45,10 +45,7 @@ layout: base.html
           <h1 class="hero-slogan">{{ qui-sommes-nous.hero.slogan }}</h1>
           
           <div class="hero-image">
-            <img
-              src="{{ homepage.hero.image }}"
-              alt="{{ homepage.hero.image_alt }}"
-            />
+            {% image qui-sommes-nous.hero.image, qui-sommes-nous.hero.image_alt, "hero-photo", "300px" %}
           </div>
 
           <h2 class="hero-subtitle">{{ qui-sommes-nous.hero.subtitle }}</h2>
